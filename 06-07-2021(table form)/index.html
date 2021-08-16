@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/daterangepicker.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>CLARITICS INDIA PRIVATE LIMITED</title>
+</head>
+
+<body class="bg-success">
+    <div class="container shadow-lg bg-white">
+        <div class="row">
+            <div class="col-12 bg-danger text-center border border-dark text-white">
+                <b class="mt-1">CLARITICS INDIA PRIVATE LIMITED</b>
+                <address>N0.46/50, INDIRA NAGAR MAIN ROAD, VALASARAVAKKAM, CHENNAI-600087 </address>
+            </div>
+            <div class="col-12 text-center border border-dark">
+                <p class="mt-1">TAX SAVING DECLARATION (TSD) FORM FY 2021-2022</p>
+            </div>
+            <div class="col-12 bg-secondary text-center border border-dark text-white">
+                <p class="mt-1">PERSONAL INFORMATION (ALL FIELDS ARE MANDATORY)</p>
+            </div>
+            <table class="table table-bordered border-dark">
+
+                <tbody>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td>NAME (CAPITAL LETTERS) as per PAN</td>
+                        <td> <input type="text" class="form-control" placeholder="NAME"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td>EMPLOYEE CODE</td>
+                        <td> <input type="text" class="form-control" placeholder="CE-CHN-000 / CE-APR-000"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td>FATHER'S NAME</td>
+                        <td> <input type="text" class="form-control" placeholder="FATHER NAME"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4</td>
+                        <td>GENDER</td>
+                        <td> <input type="text" class="form-control" placeholder="GENDER"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">5</td>
+                        <td>DESIGNATION</td>
+                        <td> <input type="text" class="form-control" placeholder="DESIGNATION"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">6</td>
+                        <td>DATE OF BIRTH</td>
+                        <td> <input type="text" class="form-control"id="dob" placeholder="DD/MM/YYYY"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">7</td>
+                        <td>PAN NUMBER</td>
+                        <td> <input type="text" class="form-control" placeholder="XXXXXXXXXX"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">8</td>
+                        <td>MOBILE NUMBER</td>
+                        <td> <input type="text" class="form-control" placeholder="XXXXXXXXXX"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">9</td>
+                        <td>EMAIL ID</td>
+                        <td> <input type="text" class="form-control" placeholder="EXAMPLE@EXAMPLE.COM"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                    </tr>
+
+                    <tr class="">
+                        <td colspan="3" class=" bg-secondary  text-center  text-white">
+                            DETAILS OF INVESTMENTS/DEDUCTION FOR FY 2021-2022
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr style="background-color:lightgray">
+                        <td>A</td>
+                        <td colspan="2">
+                            INCOME FROM OTHER SOURCES
+                        </td>
+                    </tr>
+                    <tr style="background-color:lightgray">
+                        <td>S NO</td>
+                        <td class="text-center">
+                            PARTICULARS
+                        </td>
+                        <td class="text-center">
+                            AMOUNT(RUPEES)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td>
+                            Interest earned on Saving Bank Account
+                        </td>
+                        <td>
+                            <input type="text" class="form-control"onkeypress="return onlyNumberKey(event)" id="first">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td>
+                            Interest earned on Fixed Deposit
+                        </td>
+                        <td>
+                            <input type="text" class="form-control"onkeypress="return onlyNumberKey(event)" id="second">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td>
+                            <div class="row">
+                                <div class="col-6">
+                                    Other Source of Income (Please Specify)
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="OTHER SPECIFY">
+                                </div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <input type="text" class="form-control"onkeypress="return onlyNumberKey(event)" id="third">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td class="text-end">
+                            Total(rupees)
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="total1" readonly>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered border-dark">
+                <tbody>
+                    <tr style="background-color: lightgray;">
+                        <td>B</td>
+                        <td colspan="5">
+                            HOUSE RENT PAYABLE (FOR STAFF RECEIVING "HRA" EXEMPTED AS PER RULE)
+                        </td>
+                    </tr>
+                    <tr style="background-color: lightgray;">
+                        <td>S.NO</td>
+                        <td>FROM DATE</td>
+                        <td>TO DATE</td>
+                        <td>CITY/TOWN</td>
+                        <td>RENT PAYABLE PER MONTH</td>
+                        <td>TOTAL AMOUNT</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td><input type="text" class="form-control" name="datefilter1" id="fromdate1"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control" name="datefilter2" id="todate1"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" id="rent1"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                        <td><input type="text" id="tot1"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" style="padding: 0px 33px;">2</td>
+                        <td><input type="text" class="form-control" name="datefilter3" id="fromdate2"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control" name="datefilter4" id="todate2"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" id="rent2"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                        <td><input type="text" id="tot2"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td><input type="text" class="form-control" name="datefilter5" id="fromdate3"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control" name="datefilter6" id="todate3"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" id="rent3"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                        <td><input type="text" id="tot3"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4</td>
+                        <td><input type="text" class="form-control" name="datefilter7" id="fromdate4"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control" name="datefilter8" id="todate4"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" id="rent4"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                        <td><input type="text" id="tot4"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">5</td>
+                        <td><input type="text" class="form-control" name="datefilter9" id="fromdate5"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control" name="datefilter10" id="todate5"
+                                placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" id="rent5"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                        <td><input type="text" id="tot5"onkeypress="return onlyNumberKey(event)" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            Note:Please enclose the rental agreement, copy of rent receipt and copy of PAN Card of
+                            landlord
+                        </td>
+                    </tr>
+                    <td colspan="6">
+
+                    </td>
+                    </tr>
+                    <tr style="background-color: lightgray;">
+                        <td>C</td>
+                        <td colspan="5">
+                            HOUSING LOAN INTEREST
+                        </td>
+                    </tr>
+                    <tr style="background-color: lightgray;">
+                        <td style="padding: 10px 13px 0px 13px;">S.NO</td>
+                        <td>NAME OF THE FINANCIAL INSTITUTION</td>
+                        <td>DATE OF POSSESSION</td>
+                        <td>WHETHER SELF-OCCUPIED(YES/NO)</td>
+                        <td>HOUSING LOAN SANCTIONED</td>
+                        <td>INTEREST PAID AMOUNT</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control" name="singledate1" placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control" name="singledate2" placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control" name="singledate3" placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4</td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control" name="singledate4" placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">5</td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control" name="singledate5" placeholder="DD/MM/YYYY"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            Note:Please enclose the loan certificate for house from banker
+                        </td>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered border-dark">
+
+                <tr style="background-color: lightgray;">
+                    <td>D</td>
+                    <td colspan="5">
+                        INVESTMENTS U/S 80C, 80CCC & 80CCD (ELIGIBLE LIMIT UPTO - 1,50,000/-)
+                    </td>
+                </tr>
+                <tr style="background-color: lightgray;">
+                    <td style="padding: 0px 20px;">S.NO</td>
+                    <td class="text-center">PARTICULARS</td>
+                    <td class="text-center">AMOUNT(rupees)</td>
+
+                </tr>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td>
+                        Life Insurance Premium (LIC)
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D1"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td>
+                        Public Provident Fund(PPF)
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D2"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">3</td>
+                    <td>
+                        National Savings certificate(NSC)
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D3"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">4</td>
+                    <td>
+                        Accured Internet on NSC
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D4"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">5</td>
+                    <td>
+                        Unit Linked Insurance Plan (ULIP)
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D5"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">6</td>
+                    <td>
+                        Equity Linked Saving's Scheme - (ELSS)
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D6" onkeypress="return onlyNumberKey(event)"class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">7</td>
+                    <td>
+                        Children Tuition Fee - Only "Tuition fee" upto Two Children only
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D7"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">8</td>
+                    <td>
+                        Repayment of Principal Housing Loan Instalment / Stamp duty & registration fees for the
+                        purpose of transfer of property (1st year only)
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D8"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">9</td>
+                    <td>
+                        Tax Saving Fixed Deposit with Scheduled Bank for a period of 5 years or more
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D9"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">10</td>
+                    <td>
+                        LIC Annuity / Pension Plan
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D10"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">11</td>
+                    <td>
+                        Deposit made to home loan account scheme of national housing bank
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D11"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">12</td>
+                    <td>
+                        Investment in debenture of and equity shares in, a listed company engaged in infrastructure
+                        activities for 1st year only
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D12"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">13</td>
+                    <td>
+                        Sukanya Samriddhi Account
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D13"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">14</td>
+                    <td>
+                        Deduction in respect of contribution to pension fund
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D14"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">15</td>
+                    <td>
+                        Contribution to New Pension Scheme
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D15"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">16</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-6">
+                                Others - Specify
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control" placeholder="OTHERS SPECIFY">
+                            </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        <input type="text" id="particular_D16"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center"></td>
+                    <td class="text-end">
+                        Total
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="total2" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+                <tr style="background-color: lightgray;">
+                    <td>E</td>
+                    <td colspan="5">
+                        OTHER INVESTMENTS / DEDUCTIONS
+                    </td>
+                </tr>
+                <tr style="background-color: lightgray;">
+                    <td style="padding: 10px 13px 0px 13px;">S.NO</td>
+                    <td class="text-center">PARTICULARS</td>
+                    <td class="text-center">AMOUNT(rupees)</td>
+
+                </tr>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td>
+                        Standard Deduction u/s 16(ia) of the income Tax Act, 1961
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E1"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td>
+                        Mediciam-Policy - Individual, Spouse & Children
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E2"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">3</td>
+                    <td>
+                        Medical Insurance Premium - Parents
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E3"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">4</td>
+                    <td>
+                        Preventive Health Check-up
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E4" onkeypress="return onlyNumberKey(event)"class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">5</td>
+                    <td>
+                        Mediclaim Policy - Parents
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E5"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">6</td>
+                    <td>
+                        Repayment of Interest on Higher Education Loan
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E6"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">7</td>
+                    <td>
+                        Interest on loan taken for residental house property
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E7"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">8</td>
+                    <td>
+                        Permanent Physical Disability - Self
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E8"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">9</td>
+                    <td>
+                        Permanent Physical Disability - Dependant
+                    </td>
+                    <td>
+                        <input type="text" id="particular_E9"onkeypress="return onlyNumberKey(event)" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="text-end">
+                        Total
+                    </td>
+                    <td>
+                        <input type="text" id="total3" class="form-control" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        Note:Please attach the proof of all investment declared above along and copy of PAN card,
+                        all copies need to be self certified as true copy of original
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="col-12 bg-secondary text-center border border-dark text-white">
+                <p class="mt-1">SELF DECLARATION</p>
+            </div>
+            <table class="table table-bordered border-dark">
+                <tbody>
+                    <tr>
+                        <td class="text-center" style="padding: 0px 35px;">1</td>
+                        <td>I hereby declare that the information given above is true and
+                            correct in all respects. Iam
+                            also aware that the company will be considering the above details in utmost good faith based
+                            on the details provided by me and that Iam personally liable for my consequences aristing
+                            out of errors, if any, in the above information and I shall indemnify the company for all
+                            cost and consequences</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2</td>
+                        <td>I am also aware that making a false statement/declaration in the
+                            above form shall be liable
+                            to be fined and prsecution u/s 277 of the income Tax Act, 1961.</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">3</td>
+                        <td>Proofs are enclosed. I confirm the company to deduct taxes in
+                            accordance with proof of
+                            investment and in case any further claim/deduction I shall claim my tax refund from
+                            income-Tax Department through my income Tax Return</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">4</td>
+                        <td>I am also aware that the investments declared in the above form are
+                            direct investments.
+                            There is no duplication of investments / claims as stated above</td>
+                    </tr>
+                    <tr colspan="2">
+
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered border-dark">
+                <tr>
+                    <td>Date</td>
+                    <td><input type="text" name="singledate6" class="form-control" placeholder="05/07/2021"></td>
+                    <td class="text-end">SIGNATURE OF DECLARANT</td>
+                    <td> <input type="text" class="form-control"></td>
+                </tr>
+            </table>
+
+            <div class="col-12 d-flex ">
+                <p>upload supporting documents</p>
+                <div>
+                    <input class="form-control ms-5" type="file" id="formFileMultiple" multiple>
+                </div>
+            </div>
+
+            <div class="col-12 text-end mb-4">
+                <button class="btn btn-success">
+                    save
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="assets/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
+<script src="assets/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/popper.min.js"></script>
+<script src="assets/moment.min.js"></script>
+<script src="assets/daterangepicker.min.js"></script>
+
+<script>
+//this below function allowed only numbers
+
+     function onlyNumberKey(evt) {
+         
+         // Only ASCII character in that range allowed
+         var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+         if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+             return false;
+         return true;
+     }
+    $(function () {
+        $('input[name="datefilter1"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+
+        });
+        // $('input[name="datefilter1"]').on('apply.daterangepicker', function () {
+
+        // });
+
+        $('input[name="datefilter2"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        // $('input[name="datefilter2"]').on('apply.daterangepicker', function () {
+        //     var from1 = new Date(document.getElementById("fromdate1").value);
+        //     console.log(from1);
+        //     var to1 = new Date(document.getElementById("todate1").value);
+        //     console.log(to1);
+
+        //    var subfromto =  to1.getTime() - from1.getTime();
+        //    var days = subfromto /(1000 * 3600 * 24);
+        //    var t = document.getElementById("rent1");
+        //    var r1 = document.getElementById("tot1");
+        //    t.addEventListener("input", dates);
+        //    function dates(){
+        //        var date1 = parseFloat(t.value) || 0;
+        //        var mul = date1 * days;
+        //        r1.value = mul.toFixed(2);
+        //    }
+        //    console.log(typeof days);
+        // });
+        $('#dob').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            "startDate": moment().startOf('hour').subtract(81000, 'days'),
+            "showDropdowns": true,
+            "minDate": moment().startOf('hour').subtract(80901, 'days'),
+            "maxDate": moment().startOf('hour'),
+            "linkedCalendars": false,
+        });
+        $('input[name="datefilter3"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="datefilter4"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="datefilter5"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="datefilter6"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="datefilter7"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="datefilter8"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="datefilter9"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="datefilter10"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+
+        $('input[name="singledate1"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="singledate2"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="singledate3"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="singledate4"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="singledate5"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+        $('input[name="singledate6"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+        });
+
+        //console.log(typeof from1)
+    });
+    //getting first ,second and third html element
+    var first = document.getElementById('first');
+    var second = document.getElementById('second');
+    var third = document.getElementById('third');
+    var result = document.getElementById('total1');
+    //if we edit the input field calling sum function
+    first.addEventListener("input", sum);
+    second.addEventListener("input", sum);
+    third.addEventListener("input", sum);
+    //sum function display the sum
+    function sum() {
+
+        var one = parseFloat(first.value) || 0;
+        var two = parseFloat(second.value) || 0;
+        var three = parseFloat(third.value) || 0;
+        var add = one + two + three;
+
+        result.value = add.toFixed(2);
+
+    }
+    //particular D
+    var particular_D1 = document.getElementById('particular_D1');
+    var particular_D2 = document.getElementById('particular_D2');
+    var particular_D3 = document.getElementById('particular_D3');
+    var particular_D4 = document.getElementById('particular_D4');
+    var particular_D5 = document.getElementById('particular_D5');
+    var particular_D6 = document.getElementById('particular_D6');
+    var particular_D7 = document.getElementById('particular_D7');
+    var particular_D8 = document.getElementById('particular_D8');
+    var particular_D9 = document.getElementById('particular_D9');
+    var particular_D10 = document.getElementById('particular_D10');
+    var particular_D11 = document.getElementById('particular_D11');
+    var particular_D12 = document.getElementById('particular_D12');
+    var particular_D13 = document.getElementById('particular_D13');
+    var particular_D14 = document.getElementById('particular_D14');
+    var particular_D15 = document.getElementById('particular_D15');
+    var particular_D16 = document.getElementById('particular_D16');
+    var result1 = document.getElementById('total2');
+
+    particular_D1.addEventListener("input", sum1);
+    particular_D2.addEventListener("input", sum1);
+    particular_D3.addEventListener("input", sum1);
+    particular_D4.addEventListener("input", sum1);
+    particular_D5.addEventListener("input", sum1);
+    particular_D6.addEventListener("input", sum1);
+    particular_D7.addEventListener("input", sum1);
+    particular_D8.addEventListener("input", sum1);
+    particular_D9.addEventListener("input", sum1);
+    particular_D10.addEventListener("input", sum1);
+    particular_D11.addEventListener("input", sum1);
+    particular_D12.addEventListener("input", sum1);
+    particular_D13.addEventListener("input", sum1);
+    particular_D14.addEventListener("input", sum1);
+    particular_D15.addEventListener("input", sum1);
+    particular_D16.addEventListener("input", sum1);
+
+    function sum1() {
+
+        var D1 = parseFloat(particular_D1.value) || 0;
+        var D2 = parseFloat(particular_D2.value) || 0;
+        var D3 = parseFloat(particular_D3.value) || 0;
+        var D4 = parseFloat(particular_D4.value) || 0;
+        var D5 = parseFloat(particular_D5.value) || 0;
+        var D6 = parseFloat(particular_D6.value) || 0;
+        var D7 = parseFloat(particular_D7.value) || 0;
+        var D8 = parseFloat(particular_D8.value) || 0;
+        var D9 = parseFloat(particular_D9.value) || 0;
+        var D10 = parseFloat(particular_D10.value) || 0;
+        var D11 = parseFloat(particular_D11.value) || 0;
+        var D12 = parseFloat(particular_D12.value) || 0;
+        var D13 = parseFloat(particular_D13.value) || 0;
+        var D14 = parseFloat(particular_D14.value) || 0;
+        var D15 = parseFloat(particular_D15.value) || 0;
+        var D16 = parseFloat(particular_D16.value) || 0;
+        var add1 = D1 + D2 + D3 + D4 + D5 + D6 + D7 + D8 + D9 + D10 + D11 + D12 + D13 + D14 + D15 + D16;
+
+        result1.value = add1.toFixed(2);
+
+    }
+    //particular E
+    var particular_E1 = document.getElementById('particular_E1');
+    var particular_E2 = document.getElementById('particular_E2');
+    var particular_E3 = document.getElementById('particular_E3');
+    var particular_E4 = document.getElementById('particular_E4');
+    var particular_E5 = document.getElementById('particular_E5');
+    var particular_E6 = document.getElementById('particular_E6');
+    var particular_E7 = document.getElementById('particular_E7');
+    var particular_E8 = document.getElementById('particular_E8');
+    var particular_E9 = document.getElementById('particular_E9');
+    var result2 = document.getElementById('total3');
+
+    particular_E1.addEventListener("input", sum2);
+    particular_E2.addEventListener("input", sum2);
+    particular_E3.addEventListener("input", sum2);
+    particular_E4.addEventListener("input", sum2);
+    particular_E5.addEventListener("input", sum2);
+    particular_E6.addEventListener("input", sum2);
+    particular_E7.addEventListener("input", sum2);
+    particular_E8.addEventListener("input", sum2);
+    particular_E9.addEventListener("input", sum2);
+
+    function sum2() {
+
+        var E1 = parseFloat(particular_E1.value) || 0;
+        var E2 = parseFloat(particular_E2.value) || 0;
+        var E3 = parseFloat(particular_E3.value) || 0;
+        var E4 = parseFloat(particular_E4.value) || 0;
+        var E5 = parseFloat(particular_E5.value) || 0;
+        var E6 = parseFloat(particular_E6.value) || 0;
+        var E7 = parseFloat(particular_E7.value) || 0;
+        var E8 = parseFloat(particular_E8.value) || 0;
+        var E9 = parseFloat(particular_E9.value) || 0;
+        var add2 = E1 + E2 + E3 + E4 + E5 + E6 + E7 + E8 + E9;
+
+        result2.value = add2.toFixed(2);
+
+    }
+    var r1 = document.getElementById("rent1");
+    var t1 = document.getElementById("tot1");
+    r1.addEventListener("input",reflect1);
+    function reflect1(){
+        var ref1 = parseFloat(r1.value) || 0;
+        t1.value = ref1.toFixed(2);
+    }
+    var r2 = document.getElementById("rent2");
+    var t2 = document.getElementById("tot2");
+    r2.addEventListener("input",reflect2);
+    function reflect2(){
+        var ref2 = parseFloat(r2.value) || 0;
+        t2.value = ref2.toFixed(2);
+    }
+    var r3 = document.getElementById("rent3");
+    var t3 = document.getElementById("tot3");
+    r3.addEventListener("input",reflect3);
+    function reflect3(){
+        var ref3 = parseFloat(r3.value) || 0;
+        t3.value = ref3.toFixed(2);
+    }
+    var r4 = document.getElementById("rent4");
+    var t4 = document.getElementById("tot4");
+    r4.addEventListener("input",reflect4);
+    function reflect4(){
+        var ref4 = parseFloat(r4.value) || 0;
+        t4.value = ref4.toFixed(2);
+    }
+    var r5 = document.getElementById("rent5");
+    var t5 = document.getElementById("tot5");
+    r5.addEventListener("input",reflect5);
+    function reflect5(){
+        var ref5 = parseFloat(r5.value) || 0;
+        t5.value = ref5.toFixed(2);
+    }
+    //console.log(from1)
+    // var num = 0;
+    // function editinput(value) {
+    //     // if (document.getElementById(value).value != "" || document.getElementById(value).value != 0) {
+    //         num += parseFloat(document.getElementById(value).value);
+    //         document.getElementById("total1").value = num.toFixed(2);
+    //     // }
+    //     // else{
+
+    //     //     document.getElementById("total1").value = "0.00";
+    //     // }
+
+
+    // }
+    //console.log(num)
+</script>
+
+</html>
