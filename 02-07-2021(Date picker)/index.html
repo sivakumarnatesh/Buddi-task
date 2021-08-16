@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Date picker range</title>
+    <!-- boostrap css-->
+    <link rel="stylesheet" href="./assets/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/moment.min.js"></script>
+    <script type="text/javascript" src="assets/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/daterangepicker.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h3 class="text-center">Date Picker Range</h3>
+        <!--Date range picker-->
+        <div class="row border border-dark shadow-lg p-3 mb-5 mt-3 bg-body rounded">
+            <div class="col-4">
+                <label>1.Select today date to 2030 with range</label><br>
+                <input type="text" class="mt-2 w-50" name="daterange1" />
+            </div>
+            <div class="col-4">
+                <label>2.Select 01-01-1800 to today date with range</label><br>
+                <input type="text" class="mt-2 w-50" name="daterange2" />
+            </div>
+            <div class="col-4">
+                <label>3.Select today date to 2030 with single</label><br>
+                <input type="text" class="mt-2 w-50" name="single1" />
+            </div>
+        </div>
+        <!-- single date picker -->
+        <div class="row border border-dark shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="col-4">
+                <label class="mt-2">4.select 01-01-1800 to today date with single</label><br>
+                <input type="text" class="mt-2 w-50" name="single2" />
+            </div>
+            <div class="col-4">
+                <label>5.Select today date to 2030 with range and time</label><br>
+                <input type="text" class="mt-2 w-100" name="rangetime1" />
+            </div>
+            <div class="col-4">
+                <label>6.Select 01-01-1800 to today date with range and time</label><br>
+                <input type="text" class="mt-2 w-100" name="rangetime2" />
+            </div>
+        </div>
+        <div class="row border border-dark shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="col-4">
+                <label>7.Select today date to 2030 with single and time</label><br>
+                <input type="text" class="mt-2 w-100" name="singletime1" />
+            </div>
+            <div class="col-4">
+                <label>8.Select 01-01-1800 to today date with single and time</label><br>
+                <input type="text" class="mt-2 w-100" name="singletime2" />
+            </div><br>
+            <label>9.predefined date ranges</label><br>
+            <div class="col-4" id="reportrange"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 30%">
+
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+            </div>
+        </div>
+
+    </div>
+    <!-- <div id="reportrange"
+        style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 15%">
+        <i class="fa fa-calendar"></i>&nbsp;
+        <span></span> <i class="fa fa-caret-down"></i>
+    </div>
+    <input type="text" name="datefilter" value="" /> -->
+    <!-- boostrap  js-->
+    <script src="./assets/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<script>
+    $(function () {
+        //date range picker from 07/02/2021 to 12/31/2030
+        $('input[name="daterange1"]').daterangepicker({
+            "startDate": moment().startOf('hour'),
+            "endDate": moment().startOf('hour').add(4000, 'days'),
+            "showDropdowns": true,
+            "linkedCalendars": false,
+            "minDate": moment().startOf('hour'),
+            "maxDate": moment().startOf('hour').add(3469, 'days'),
+
+        });
+        //date range picker from 01/01/1800 to 07/02/2021
+        $('input[name="daterange2"]').daterangepicker({
+            //display start date in input field
+            "startDate": moment().startOf('hour').subtract(81000, 'days'),
+            //display end date in input field
+            "endDate": moment().startOf('hour'),
+            //display dropdowns
+            "showDropdowns": true,
+            //set minimum date select
+            "minDate": moment().startOf('hour').subtract(80901, 'days'),
+            //set maximum date select
+            "maxDate": moment().startOf('hour'),
+            "linkedCalendars": false,
+
+        });
+        //single date picker from 07/02/2021 to 12/31/2030
+        $('input[name="single1"]').daterangepicker({
+            singleDatePicker: true,
+            "linkedCalendars": false,
+            "startDate": moment().startOf('hour'),
+            "showDropdowns": true,
+            "minDate": moment().startOf('hour'),
+            "maxDate": moment().startOf('hour').add(3469, 'days'),
+
+        });
+        //single date picker from 01/01/1800 to 07/02/2021
+        $('input[name="single2"]').daterangepicker({
+            //enable single date picker
+            singleDatePicker: true,
+            "startDate": moment().startOf('hour').subtract(81000, 'days'),
+            "showDropdowns": true,
+            "minDate": moment().startOf('hour').subtract(80901, 'days'),
+            "maxDate": moment().startOf('hour'),
+            "linkedCalendars": false,
+
+        });
+        //range date picker with time from 07/02/2021 to 12/31/2030
+        $('input[name="rangetime1"]').daterangepicker({
+            timePicker: true,
+            "startDate": moment().startOf('hour'),
+            opens: 'left',
+            "endDate": moment().startOf('hour').add(4000, 'days'),
+            "showDropdowns": true,
+			"hours12":false,
+            "linkedCalendars": false,
+            "minDate": moment(),
+            "maxDate": moment().startOf('hour').add(3469, 'days'),
+            startDate: moment().startOf('hour'),
+            endDate: moment().startOf('hour').add(4000, 'days'),
+            locale: {
+                format: 'MM/DD/YYYY hh:mm A'
+            }
+
+        });
+        //range date picker with time from 01/01/1800 to 07/02/2021
+        $('input[name="rangetime2"]').daterangepicker({
+            //linked calendar enable to display sequential months
+            "linkedCalendars": false,
+            //selected date reflected to input field
+            "autoUpdateInput": true,
+            "linkedCalendars": false,
+            timePicker: true,
+            "startDate": moment().startOf('hour').subtract(81000, 'days'),
+            "endDate": moment().startOf('hour'),
+            "showDropdowns": true,
+            "minDate": "01/01/1800",
+
+            "maxDate": moment().startOf('hour'),
+            startDate: moment().startOf('hour').subtract(81000, 'days'),
+            endDate: moment().startOf('hour'),
+            locale: {
+                format: 'MM/DD/YYYY hh:mm A'
+            }
+
+        });
+        //single date picker with time from 07/02/2021 to 12/31/2030
+        $('input[name="singletime1"]').daterangepicker({
+            singleDatePicker: true,
+            timePicker: true,
+            "startDate": moment().startOf('hour'),
+            "showDropdowns": true,
+            "linkedCalendars": false,
+            "minDate": moment().startOf('hour'),
+            "maxDate": moment().startOf('hour').add(3469, 'days'),
+            startDate: moment().startOf('hour'),
+            endDate: moment().startOf('hour').add(4000, 'days'),
+            locale: {
+                format: 'MM/DD/YYYY hh:mm A'
+            }
+
+
+        });
+        //single date picker with time from 01/01/1800 to 07/02/2021
+        $('input[name="singletime2"]').daterangepicker({
+
+            singleDatePicker: true,
+            drops: 'up',
+            timePicker: true,
+            "startDate": moment().startOf('hour').subtract(81000, 'days'),
+            "showDropdowns": true,
+            "linkedCalendars": false,
+            "minDate": moment().startOf('hour').subtract(80901, 'days'),
+            "maxDate": moment().startOf('hour'),
+            startDate: moment().startOf('hour').subtract(81000, 'days'),
+            endDate: moment().startOf('hour'),
+            locale: {
+                format: 'MM/DD/YYYY hh:mm A'
+            }
+        });
+        var start = moment().subtract(29, 'days');
+        var end = moment("01/01/2030");
+
+       
+        $('#reportrange').daterangepicker({
+            startDate: start,
+			 "minDate": start,
+            "maxDate": moment().add(30,'days'),
+            endDate: end,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+		 function cb(start, end) {
+            $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+
+
+        cb(start, end);
+
+    });
+
+
+
+</script>
+
+</html>
