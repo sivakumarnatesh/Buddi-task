@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- boostrap 5-->
+    <link rel="stylesheet" href="./assets/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+	
+        .navitems{
+            text-decoration: none;
+                   }
+        .navitems:hover{
+            text-decoration: underline;
+            
+        }
+        .navtiemhover:hover{
+            background-color: #11537D;
+    
+        }
+        .hoverpageheadings:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .bannertexthover{
+            color: #8B336C;
+        }
+       
+        .bannertexthover:hover{
+         color: black;
+         cursor: pointer;
+         text-decoration: underline;
+        }
+        .flerbtn{
+            width: 150px;
+            background-color: lightgray;
+        }
+        .flerbtn:hover{
+            background-color: white;
+            border: 3px solid gray;
+        }
+        .bodybtns{
+            background-image: linear-gradient(white, lightgray) ;
+            border: 1px solid gray;
+        }
+        .bodybtns:hover{
+            border: 1px solid #0072BC;
+        }
+        .imgborderhover{
+            border: 5px solid white;
+        }
+        
+        .imgborderhover:hover{
+            border: 5px solid lightgray;
+        }
+        @media only screen and (max-width: 992px) {  
+ .hideonmpblie{
+     display:none;
+  
+ }
+ .withsearchinmobile{
+     width: 100%;
+ }
+ .footerlap{
+        display: none;
+    }
+ 
+}  
+@media only screen and (min-width: 990px) and (max-width: 1400px) {
+    .hideonlaptop{
+        display: none;
+    }
+    .footerinmob{
+        display: none;
+    }
+  
+}
+    </style>
+</head>
+<body style="background-color:#F5F5F5  ; width: 100%;">
+  <!-- navtab -->
+    <nav class="hideonmpblie"  style="background-color: #2B79AB;" >
+        <div class="container text-end pt-3">
+           <a class="navitems text-white ms-4" href=""><i class="fa fa-globe" aria-hidden="true"></i> TRANSLATE  </a>
+           <a class=" navitems text-white  ms-4" href=""><i class="fa fa-volume-down" aria-hidden="true"></i> LYSSNA </a>
+           <a class="navitems text-white  ms-4" href=""><i class="fa fa-comment-o" aria-hidden="true"></i> KONTAKT </a>
+           <a class="navitems text-white  ms-4" href=""><i class="fa fa-mouse-pointer" aria-hidden="true"></i> E-TJÄNSTER </a>
+           <a class="navitems text-white  ms-4" href=""><i class="fa fa-mouse-pointer" aria-hidden="true"></i> FELANMÄLAN </a>
+           <a class="navitems text-white  ms-4" href=""><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
+        </div>
+    </nav>
+    <nav class="navbar" style="background-color:  #2B79AB;;">
+       
+        <div class=" container">
+            <div class="col-10 mx-auto text-center">
+                <img class="d-md-none img-fluid" src="./assets/img/Capture.PNG" alt="">
+            </div>
+          <img class="d-none d-md-block col-md-10 mx-md-auto mx-lg-0 d-lg-inline-block col-lg-4 img-fluid" src="./assets/img/Capture.PNG" alt="" >
+          <a class="hideonlaptop navitems text-white ms-4" href=""><i class="fa fa-globe" aria-hidden="true"></i> TRANSLATE  </a>
+          <a class="hideonlaptop navitems text-white  ms-4" href=""><i class="fa fa-volume-down" aria-hidden="true"></i> LYSSNA </a>
+          <a class=" hideonlaptop navitems text-white  ms-4" href=""><i class="fa fa-comment-o" aria-hidden="true"></i> KONTAKT </a>
+          <a class="hideonlaptop navitems text-white  ms-4" href=""><i class="fa fa-mouse-pointer" aria-hidden="true"></i> E-TJÄNSTER </a>
+          <a class="hideonlaptop navitems text-white  ms-4" href=""><i class="fa fa-mouse-pointer" aria-hidden="true"></i> FELANMÄLAN </a>
+          <a class="hideonlaptop navitems text-white  ms-4" href=""><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
+          <form class="withsearchinmobile d-flex">
+            <div class=" input-group  mb-3">
+               
+                <input type="text" class=" form-control" placeholder="SOK..." aria-describedby="basic-addon1">
+                <span style="background-color: #B7D8E3;" class="input-group-text" id="search"><i class="fa fa-search text-primary" aria-hidden="true"></i></span>
+              </div>
+          </form>
+          <form  class="withsearchinmobile d-flex w-100 d-lg-none ">
+            <div class=" input-group  mb-3">
+                <div class="dropdown ">
+                    <button style="background-color: #154D6A;"  class="btn dropdown text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Huvudmeny <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item d-flex justify-content-between" href="#">Bo, bygga och trafik <i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                      <li><a class="dropdown-item d-flex justify-content-between" href="#">Barn och utbildning<i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                      <li><a class="dropdown-item d-flex justify-content-between" href="#">Omsorg och stöd<i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                      <li><a class="dropdown-item d-flex justify-content-between" href="#">Arbete och näringsliv <i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                      <li><a class="dropdown-item d-flex justify-content-between" href="#">Arbete och näringsliv <i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                      
+                    </ul>
+                  </div>
+              </div>
+          </form>
+        </div>
+      </nav>
+      <nav class="hideonmpblie" style="background-color: #2B79AB; " class="">
+        <div class="container d-flex justify-content-between pt-3">
+            <a href="" class="navitems navtiemhover text-white p-3">Bo, bygga och trafik</a>
+            <a href="" class="navitems navtiemhover text-white p-3">Barn och utbildning</a>
+            <a href="" class="navitems navtiemhover text-white p-3">Omsorg och stöd</a>
+            <a href="" class="navitems navtiemhover text-white p-3">Arbete och näringsliv</a>
+            <a href="" class="navitems navtiemhover text-white p-3">Kultur/Fritid/Upplevelser</a>
+            <a href="" class="navitems navtiemhover text-white p-3">Kommun och politik</a>
+        </div>
+
+      </nav>
+    <!-- banner -->
+<div  class="container">
+    <div class="row flex-column-reverse flex-lg-row mt-5 ">
+        <div class="col-lg-4 col-sm-12 ">
+    <h2 class="hoverpageheadings">Staffanstorp en av landets bästa kommuner att leva i</h2>
+    <p  class="bannertexthover mt-3 "><i class="fa fa-tag text-secondary" aria-hidden="true"></i> ÄLDREOMSORG, BÄST ATT LEVA, FOKUS, RANKING, STAFFANSTORPS KOMMUN, TRYGGHET</p>
+    <i class="fa fa-comment text-secondary" aria-hidden="true"></i>
+    <p>Staffanstorps kommun hamnar på sjätteplats i Sverige när tidningen Fokus listar landets bästa kommuner att leva i. Staffanstorp har sedan förra året klättrat från plats 25 till plats sex.</p>
+    <button type="button" class="bodybtns btn  mt-4">Läs mer</button>
+        
+</div>
+<div class="col-lg-7 col-sm-12">
+    <img class="imgborderhover img-fluid img-thumbnail " src="./assets/img/banner.PNG" alt="">
+        </div>
+        </div>
+		<!-- page2 -->
+        <div class="row">
+        
+        <div class="col-12 text-center mt-5 border-0 border-bottom pb-5">
+            SENASTE NYHETERNA
+        </div>
+        <div class="col-lg-4 col-sm-12 mt-5 border-0 border-bottom ">
+<img class="imgborderhover img-fluid img-thumbnail" src="./assets/img/toon image.jpeg" alt="">
+<h3 class="hoverpageheadings mt-3">Följ med på digital trygghetsvandring</h3>
+<p class="mt-3">Fram till den 30 juni inbjuds alla medborgare i Staffanstorps kommun att digitalt via en särskild länk i mobilläge lämna åsikter om trygga och otrygga platser.</p>
+<button type="button" class="bodybtns btn  mt-4 mb-5">Läs mer</button>
+        </div>
+        <div class="col-lg-4 col-sm-12 mt-5 border-0 border-bottom">
+            <img class="imgborderhover img-fluid img-thumbnail" src="./assets/img/buildings.jpeg" alt="">
+<h3 class="hoverpageheadings mt-3">Covid-19: Kommunal service under coronapandemin</h3>
+<p class="mt-3">Staffanstorps kommun kommer i denna utmanande situation att upprätthålla den kommunala servicen så långt det är möjligt. Vid behov av kontakt med Staffanstorps kommun, använd i första hand telefon och e-post.</p>
+<button type="button" class="bodybtns btn  mt-4 mb-5">Läs mer</button>
+        </div>
+        <div class="col-lg-4 col-sm-12 mt-5 border-0 border-bottom">
+            <img class="imgborderhover img-fluid img-thumbnail" src="./assets/img/hand.jpeg" alt="">
+<h3 class="hoverpageheadings mt-3">Föräldrautbildning BIFF</h3>
+<p class="mt-3">I september planerar vi åter att erbjuda kursen Barn i föräldrars fokus (BIFF) som vänder sig till föräldrar som håller på att separera eller har separerat. Om utbildningen BIFF är en kort föräldrautbildning på […]</p>
+<button type="button" class="bodybtns btn  mt-4 mb-5">Läs mer</button>
+        </div>
+        <div class="col-12 text-center">
+            <button type="button" class="flerbtn btn  border rounded-pill mt-4">Fler nyheter</button>
+        </div>
+    </div>
+</div>
+<!-- page3 -->
+<div style="background-color:#2B79AB ;" class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12 text-white mt-5 pb-5">
+                <h5 class="border-0 border-bottom">INFORMATION COVID-19</h5>
+                <img class="imgborderhover img-fluid" src="./assets/img/laptop.jpeg" alt="">
+                Här publiceras den information som tidigare funnits på den fysiska anslagstavlan utanför rådhuset. Du finner tillkännagivanden, kungörelser, justerade protokoll med mera. Läs mer » <a class="text-white" href="">klicka här.</a>
+            </div>
+            <div class="col-lg-3 col-sm-12 text-white mt-5">
+                <h5 class="border-0 border-bottom">DIGITAL ANSLAGSTAVLA</h5>
+                <img class="imgborderhover img-fluid" src="./assets/img/laptoppc.jpeg" alt="">
+                Bli en av oss! Vi har över 25 000 invånare att ge en god service till. Våra medarbetare är vår främsta styrka. Hos oss finns många olika yrkesroller och befattningar. Läs mer » <a class="text-white" href="">Läs mer »</a>
+            </div>
+                <div class="col-lg-3 col-sm-12 text-white mt-5">
+                <h5 class="border-0 border-bottom">JOBBA HOS OSS</h5>
+                <img class="imgborderhover img-fluid" src="./assets/img/puzle.jpeg" alt="">
+                Staffanstorps kommun följer noga händelseutvecklingen kring covid-19. Vi har skapat en sida med länkar till sidor där du kan läsa mer information och råd kring sjukdomen. Den sidan besöker du genom att <a class="text-white" href="">Läs mer »</a>
+            </div>
+            <div class="col-lg-3 col-sm-12 text-white mt-5">
+                <h5 class="border-0 border-bottom">EVENEMANG</h5>
+                <img class="imgborderhover img-fluid" src="./assets/img/event.jpeg" alt="">
+                Det finns mycket att uppleva och göra i Staffanstorps kommun. Här hittar du information och tips om kommande evenemang, såväl kommunens som andra aktörers. Läs mer » <a class="text-white" href="">Läs mer »</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer on lap -->
+<footer class="footerlap" style="background-color:#11537D ; ">
+    <div class="container pt-5 pb-5">
+        <div class="col  text-white ">
+            <a href="" class="text-decoration-none text-white mt-5 ">Staffanstorps kommun | </a> 
+            <a href="" class="text-decoration-none text-white mt-5 "> Rådhuset, Torget 1 | </a> 
+            <a href="" class="text-decoration-none text-white mt-5"> <i class="fa fa-phone" aria-hidden="true"></i>  Växel:<a class="text-white" href=""><b> 046-25 11 00 |</b></a> </a> 
+            <a href="" class="text-decoration-none text-white mt-5 "> Org.nr.: 212000 – 1017 | </a> 
+            <a href="" class="text-decoration-none text-white mt-5 "> <i class="fa fa-map" aria-hidden="true"></i> <a href="" class="text-decoration-none text-white "><b>Karta</b></a> | </a>
+            <a href="" class="text-decoration-none text-white mt-5 "> <i class="fa fa-pencil" aria-hidden="true"></i> <a  class="text-decoration-none text-white " href=""><b>Admin</b></a></a>
+        </div>
+        <div class="col mt-3  text-white">
+            Denna webbplats <a class="text-white" href=""><b>följer Staffanstorps licenspolicy</b>.</a> <i class="fa fa-info-circle" aria-hidden="true"></i> <a class="text-white" href=""><b>Om webbplatsen</b></a>
+        </div> 
+      
+    </div>
+</footer>
+
+
+
+
+<!-- footer on mobile -->
+<footer class="footerinmob" style="background-color:#11537D ; ">
+    <div class="container pt-5 pb-5">
+        <div class="row text-white text-left ">
+            <a href="" class="text-decoration-none text-white border-0 border-bottom ">Staffanstorps kommun  </a> 
+            <a href="" class="text-decoration-none text-white border-0 border-bottom "> Rådhuset, Torget 1  </a> 
+            <a href="" class="text-decoration-none text-white border-0 border-bottom"> <i class="fa fa-phone" aria-hidden="true"></i>  Växel:<a class="text-white" href=""><b> 046-25 11 00 </b></a> </a> 
+            <a href="" class="text-decoration-none text-white border-0 border-bottom "> Org.nr.: 212000 – 1017  </a> 
+            <a href="" class="text-decoration-none text-white border-0 border-bottom "> <i class="fa fa-map" aria-hidden="true"></i><b>Karta</b> </a>
+            <a href="" class="text-decoration-none text-white border-0 border-bottom"> <i class="fa fa-pencil" aria-hidden="true"></i><b>Admin</b></a>
+        </div>
+        <div class="col mt-3  text-white">
+            Denna webbplats <a class="text-white" href=""><b>följer Staffanstorps licenspolicy</b>.</a> <i class="fa fa-info-circle" aria-hidden="true"></i> <a class="text-white" href=""><b>Om webbplatsen</b></a>
+        </div> 
+      
+    </div>
+</footer>
+
+<!-- boostrap 5 js-->
+    <script src="./assets/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/payment.js"></script>
+</body>
+</html>
