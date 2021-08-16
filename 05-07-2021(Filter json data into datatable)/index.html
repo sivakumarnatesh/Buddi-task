@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter JSON data into data table</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./assets/bootstrap-5.0.1-dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="assets/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="assets/daterangepicker.css">
+    <link rel="stylesheet" href="assets/jquery.dataTables.min.css">
+    <!-- <link rel="stylesheet" href="datatable.css"> -->
+
+</head>
+
+<body>
+    <h4 class="text-center">FILTER JSON DATA INTO DATATABLE</h4>
+    <div class="col-12 row">
+        <div class="col-4"></div>
+        <div class="text-center">
+            <select id="example-multiple-selected" multiple="multiple">
+                <option value="manikandan" id="name1">manikandan</option>
+                <option value="Sheik Masthan" id="name2">Sheik Masthan</option>
+            </select>
+        </div>
+        <div class="ml-5">
+            <input type="text" name="datefilter" id="data" value="" />
+            <!-- <input id="daterange"> -->
+        </div>
+        <button id="loadData" class="btn btn-primary ml-5">Load Data</button>
+        <div class="col-3"></div>
+    </div>
+    <div class="mt-5 container bg-info" style="margin-top: 3%;padding:20px 20px 20px 20px;">
+        <table id="table_1" style="width:100%">
+            <thead class="bg-warning">
+                <tr>
+                    <th>Task ID</th>
+                    <th>Username</th>
+                    <th>Task type</th>
+                    <th>scheduledStartDate</th>
+                    <th>scheduledEndDate</th>
+                    <th>Project Title</th>
+                    <th>Sprint Name</th>
+                    <th>Estimated Hours</th>
+                    <th>Total hrs</th>
+                    <th>Task Status</th>
+                </tr>
+            </thead>
+            <tbody id="databody">
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+<!-- <script src="assets/jquery.min.js"></script> -->
+<!-- <script src="assets/jquery-3.2.1.slim.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+<script src="assets/popper.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<script src="./assets/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+<script src="assets/jquery.dataTables.min.js"></script>
+<!-- <script src="datatable.js"></script> -->
+<script src="assets/moment.min.js"></script>
+<script src="assets/daterangepicker.min.js"></script>
+<script src="assets/bootstrap-multiselect.js"></script>
+<script type="text/javascript">
+
+    var data = [
+        {
+            "scheduledEnd": "06/29/2021",
+            "actualEnd": "06/29/2021 20:31:09",
+            "userName": "manikandan",
+            "sprintId": "1378",
+            "taskType": "T",
+            "totalhrs": 10.49,
+            "currentUserId": 22,
+            "sprintName": "06282021 - 07032021",
+            "estimatedHours": "10.0",
+            "taskTitle": "RegistrationAi new forms and Analytics 06292021",
+            "projecttitle": "RegistrationAI",
+            "projectId": "9",
+            "actualStart": "06/29/2021 09:41:19",
+            "taskId": 25047,
+            "taskStatus": "Done",
+            "scheduledStart": "06/29/2021"
+        },
+        {
+            "scheduledEnd": "06/28/2021",
+            "actualEnd": "06/28/2021 20:06:54",
+            "userName": "Sheik Masthan",
+            "sprintId": "1378",
+            "taskType": "T",
+            "totalhrs": 6.27,
+            "currentUserId": 468,
+            "sprintName": "06282021 - 07032021",
+            "estimatedHours": "8.0",
+            "taskTitle": "New Multiselect drop down implementation",
+            "projecttitle": "RegistrationAI",
+            "projectId": "9",
+            "actualStart": "06/28/2021 13:38:58",
+            "taskId": 25006,
+            "taskStatus": "Done",
+            "scheduledStart": "06/28/2021"
+        },
+        {
+            "scheduledEnd": "06/28/2021",
+            "actualEnd": "06/28/2021 20:19:22",
+            "userName": "manikandan",
+            "sprintId": "1377",
+            "taskType": "T",
+            "projectKey": "CaduceusCoding.Ai",
+            "totalhrs": 9.59,
+            "currentUserId": 22,
+            "sprintName": "CADCA09",
+            "estimatedHours": "9.0",
+            "taskTitle": "AnalyticsAi and Change CodingAi 06282021",
+            "projecttitle": "Caduceus Coding.Ai",
+            "projectId": "87",
+            "actualStart": "06/28/2021 10:19:44",
+            "taskId": 24982,
+            "taskStatus": "Done",
+            "scheduledStart": "06/28/2021"
+        },
+        {
+            "scheduledEnd": "06/26/2021",
+            "actualEnd": "06/26/2021 22:04:05",
+            "userName": "manikandan",
+            "sprintId": "1354",
+            "taskType": "T",
+            "totalhrs": 11.38,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD81",
+            "estimatedHours": "9.0",
+            "taskTitle": "Change EM - 06262021 06252021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/26/2021 10:25:32",
+            "taskId": 24943,
+            "taskStatus": "Done",
+            "scheduledStart": "06/26/2021"
+        },
+        {
+            "scheduledEnd": "06/24/2021",
+            "actualEnd": "06/24/2021 21:55:00",
+            "userName": "Sheik Masthan",
+            "sprintId": "1352",
+            "taskType": "T",
+            "projectKey": "HealthPro-Coding.AI",
+            "totalhrs": 12.36,
+            "currentUserId": 468,
+            "sprintName": "HPCOD18",
+            "estimatedHours": "8.0",
+            "taskTitle": "Changes after showing Demo ",
+            "projecttitle": "HealthPro Coding.AI",
+            "projectId": "80",
+            "actualStart": "06/24/2021 09:18:51",
+            "taskId": 24795,
+            "taskStatus": "Done",
+            "scheduledStart": "06/24/2021"
+        },
+        {
+            "scheduledEnd": "06/23/2021",
+            "actualEnd": "06/23/2021 22:51:29",
+            "userName": "manikandan",
+            "sprintId": "1354",
+            "taskType": "T",
+            "totalhrs": 0,
+            "currentUserId": 22,
+            "comment": "Actual Start: 9:30\nActual End: 20:00",
+            "sprintName": "VMGCOD81",
+            "estimatedHours": "8.0",
+            "taskTitle": "VMG and Provider portal 06232021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/23/2021 22:51:11",
+            "taskId": 24789,
+            "taskStatus": "Done",
+            "scheduledStart": "06/23/2021"
+        },
+        {
+            "scheduledEnd": "06/22/2021",
+            "actualEnd": "06/22/2021 19:30:00",
+            "userName": "manikandan",
+            "sprintId": "1354",
+            "taskType": "T",
+            "totalhrs": 8.02,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD81",
+            "estimatedHours": "8.0",
+            "taskTitle": "Reports page break - 06222021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/22/2021 11:27:28",
+            "taskId": 24689,
+            "taskStatus": "Done",
+            "scheduledStart": "06/22/2021"
+        },
+        {
+            "scheduledEnd": "06/21/2021",
+            "actualEnd": "06/21/2021 20:55:25",
+            "userName": "Sheik Masthan",
+            "sprintId": "1352",
+            "taskType": "T",
+            "projectKey": "HealthPro-Coding.AI",
+            "totalhrs": 7.15,
+            "currentUserId": 468,
+            "sprintName": "HPCOD18",
+            "estimatedHours": "4.0",
+            "taskTitle": "Script Integration for 2021 EM",
+            "projecttitle": "HealthPro Coding.AI",
+            "projectId": "80",
+            "actualStart": "06/21/2021 13:39:37",
+            "taskId": 24624,
+            "taskStatus": "Done",
+            "scheduledStart": "06/21/2021"
+        },
+        {
+            "scheduledEnd": "06/19/2021",
+            "actualEnd": "06/19/2021 20:58:31",
+            "userName": "manikandan",
+            "sprintId": "1343",
+            "taskType": "T",
+            "totalhrs": 10.27,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD80",
+            "estimatedHours": "8.0",
+            "taskTitle": "Multiple EM 06192021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/19/2021 10:31:31",
+            "taskId": 24558,
+            "taskStatus": "Done",
+            "scheduledStart": "06/19/2021"
+        },
+        {
+            "scheduledEnd": "06/18/2021",
+            "actualEnd": "06/18/2021 22:00:00",
+            "userName": "manikandan",
+            "sprintId": "1343",
+            "taskType": "T",
+            "totalhrs": 12.36,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD80",
+            "estimatedHours": "10.0",
+            "taskTitle": "Multiple EM 06182021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/18/2021 09:23:31",
+            "taskId": 24496,
+            "taskStatus": "Done",
+            "scheduledStart": "06/18/2021"
+        },
+        {
+            "scheduledEnd": "06/18/2021",
+            "actualEnd": "06/18/2021 21:24:01",
+            "userName": "Sheik Masthan",
+            "sprintId": "1344",
+            "taskType": "T",
+            "projectKey": "HealthPro-Coding.AI",
+            "totalhrs": 12.05,
+            "currentUserId": 468,
+            "sprintName": "HPCOD17",
+            "estimatedHours": "8.0",
+            "taskTitle": "Multiple EM Changes 1995 1997 and 2021",
+            "projecttitle": "HealthPro Coding.AI",
+            "projectId": "80",
+            "actualStart": "06/18/2021 09:18:38",
+            "taskId": 24494,
+            "taskStatus": "Done",
+            "scheduledStart": "06/18/2021"
+        },
+        {
+            "scheduledEnd": "06/17/2021",
+            "actualEnd": "06/17/2021 22:34:40",
+            "userName": "Sheik Masthan",
+            "sprintId": "1344",
+            "taskType": "T",
+            "projectKey": "HealthPro-Coding.AI",
+            "totalhrs": 11.58,
+            "currentUserId": 468,
+            "sprintName": "HPCOD17",
+            "estimatedHours": "3.0",
+            "taskTitle": "QA issue fixing in All coding AI",
+            "projecttitle": "HealthPro Coding.AI",
+            "projectId": "80",
+            "actualStart": "06/17/2021 10:36:27",
+            "taskId": 24447,
+            "taskStatus": "Done",
+            "scheduledStart": "06/17/2021"
+        },
+        {
+            "scheduledEnd": "06/17/2021",
+            "actualEnd": "06/17/2021 22:00:00",
+            "userName": "manikandan",
+            "sprintId": "1343",
+            "taskType": "T",
+            "totalhrs": 11.25,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD80",
+            "estimatedHours": "9.0",
+            "taskTitle": "Multiple EM 06172021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/17/2021 10:34:50",
+            "taskId": 24446,
+            "taskStatus": "Done",
+            "scheduledStart": "06/17/2021"
+        },
+        {
+            "scheduledEnd": "06/16/2021",
+            "actualEnd": "06/16/2021 23:02:08",
+            "userName": "Sheik Masthan",
+            "sprintId": "1344",
+            "taskType": "T",
+            "projectKey": "HealthPro-Coding.AI",
+            "totalhrs": 10.42,
+            "currentUserId": 468,
+            "sprintName": "HPCOD17",
+            "estimatedHours": "8.0",
+            "taskTitle": "All Common Coding AI QA issue Fixing",
+            "projecttitle": "HealthPro Coding.AI",
+            "projectId": "80",
+            "actualStart": "06/16/2021 12:19:18",
+            "taskId": 24382,
+            "taskStatus": "Done",
+            "scheduledStart": "06/16/2021"
+        },
+        {
+            "scheduledEnd": "06/16/2021",
+            "actualEnd": "06/16/2021 20:52:53",
+            "userName": "manikandan",
+            "sprintId": "1343",
+            "taskType": "T",
+            "totalhrs": 11.09,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD80",
+            "estimatedHours": "9.0",
+            "taskTitle": "Multiple EM 06162021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/16/2021 09:43:26",
+            "taskId": 24354,
+            "taskStatus": "Done",
+            "scheduledStart": "06/16/2021"
+        },
+        {
+            "scheduledEnd": "06/15/2021",
+            "actualEnd": "06/15/2021 20:55:00",
+            "userName": "manikandan",
+            "sprintId": "1343",
+            "taskType": "T",
+            "totalhrs": 11.16,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD80",
+            "estimatedHours": "9.0",
+            "taskTitle": "Multiple EM 06152021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/15/2021 09:38:19",
+            "taskId": 24284,
+            "taskStatus": "Done",
+            "scheduledStart": "06/15/2021"
+        },
+        {
+            "scheduledEnd": "06/14/2021",
+            "actualEnd": "06/14/2021 21:00:00",
+            "userName": "Sheik Masthan",
+            "sprintId": "1344",
+            "taskType": "T",
+            "projectKey": "HealthPro-Coding.AI",
+            "totalhrs": 8.35,
+            "currentUserId": 468,
+            "sprintName": "HPCOD17",
+            "estimatedHours": "4.0",
+            "taskTitle": "Total Showing for Loaded Discarded Acceptable and Skipped",
+            "projecttitle": "HealthPro Coding.AI",
+            "projectId": "80",
+            "actualStart": "06/14/2021 12:24:39",
+            "taskId": 24241,
+            "taskStatus": "Done",
+            "scheduledStart": "06/14/2021"
+        },
+        {
+            "scheduledEnd": "06/14/2021",
+            "actualEnd": "06/14/2021 22:37:58",
+            "userName": "manikandan",
+            "sprintId": "1343",
+            "taskType": "T",
+            "totalhrs": 12.23,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD80",
+            "estimatedHours": "11.0",
+            "taskTitle": "Multiple EM 06142021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/14/2021 10:14:13",
+            "taskId": 24234,
+            "taskStatus": "Done",
+            "scheduledStart": "06/14/2021"
+        },
+        {
+            "scheduledEnd": "06/12/2021",
+            "actualEnd": "06/12/2021 19:56:10",
+            "userName": "manikandan",
+            "sprintId": "1333",
+            "taskType": "T",
+            "totalhrs": 9.34,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD82",
+            "estimatedHours": "8.0",
+            "taskTitle": "Multiple EM 2021 and novitas 06122021 06122021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/12/2021 10:21:14",
+            "taskId": 24197,
+            "taskStatus": "Done",
+            "scheduledStart": "06/12/2021"
+        },
+        {
+            "scheduledEnd": "06/11/2021",
+            "actualEnd": "06/12/2021 11:15:26",
+            "userName": "Sheik Masthan",
+            "sprintId": "1333",
+            "taskType": "T",
+            "totalhrs": 1,
+            "currentUserId": 468,
+            "sprintName": "VMGCOD82",
+            "estimatedHours": "8.0",
+            "taskTitle": "RRHS QA issue Fixing",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/11/2021 18:29:50",
+            "taskId": 24181,
+            "taskStatus": "Done",
+            "scheduledStart": "06/11/2021"
+        },
+        {
+            "scheduledEnd": "06/11/2021",
+            "actualEnd": "06/11/2021 18:59:54",
+            "userName": "manikandan",
+            "sprintId": "1333",
+            "taskType": "T",
+            "totalhrs": 9.21,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD82",
+            "estimatedHours": "8.0",
+            "taskTitle": "IKS demo pages 06112021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/11/2021 09:38:00",
+            "taskId": 24129,
+            "taskStatus": "Done",
+            "scheduledStart": "06/11/2021"
+        },
+        {
+            "scheduledEnd": "06/10/2021",
+            "actualEnd": "06/14/2021 22:57:16",
+            "userName": "Sheik Masthan",
+            "sprintId": "1328",
+            "taskType": "T",
+            "totalhrs": 40.9,
+            "currentUserId": 468,
+            "sprintName": "CHCCA88",
+            "estimatedHours": "4.0",
+            "taskTitle": "Document Showing in New window ",
+            "projecttitle": "CHC-Coding Ai\n",
+            "projectId": "26",
+            "actualStart": "06/10/2021 13:29:59",
+            "taskId": 24100,
+            "taskStatus": "Done",
+            "scheduledStart": "06/10/2021"
+        },
+        {
+            "scheduledEnd": "06/10/2021",
+            "actualEnd": "06/10/2021 19:20:41",
+            "userName": "manikandan",
+            "sprintId": "1336",
+            "taskType": "T",
+            "projectKey": "New Projects",
+            "totalhrs": 9.42,
+            "currentUserId": 22,
+            "comment": "Login again: 21:45 to 22:30\ncodingScripts, hccddemo -\n\t- HCC grid provider and page no column removed\n\t- Codingside menu other than documents all section set to display none\nmyqueue -\n\t- Needs Review th changed to Inprogress\n\t- Table note section removed",
+            "sprintName": "Pipeline 21",
+            "estimatedHours": "8.0",
+            "taskTitle": "IKS demo changes and Multiple EM 06102021",
+            "projecttitle": "Addon - UI",
+            "projectId": "68",
+            "actualStart": "06/10/2021 09:38:09",
+            "taskId": 24070,
+            "taskStatus": "Done",
+            "scheduledStart": "06/10/2021"
+        },
+        {
+            "scheduledEnd": "06/09/2021",
+            "actualEnd": "06/09/2021 22:46:10",
+            "userName": "Sheik Masthan",
+            "sprintId": "1328",
+            "taskType": "T",
+            "totalhrs": 10.37,
+            "currentUserId": 468,
+            "sprintName": "CHCCA88",
+            "estimatedHours": "6.0",
+            "taskTitle": "Shallow and Deep passer functionality differentiate",
+            "projecttitle": "CHC-Coding Ai\n",
+            "projectId": "26",
+            "actualStart": "06/09/2021 12:08:39",
+            "taskId": 24023,
+            "taskStatus": "Done",
+            "scheduledStart": "06/09/2021"
+        },
+        {
+            "scheduledEnd": "06/09/2021",
+            "actualEnd": "06/10/2021 00:12:43",
+            "userName": "manikandan",
+            "sprintId": "1336",
+            "taskType": "T",
+            "projectKey": "New Projects",
+            "totalhrs": 8.07,
+            "currentUserId": 22,
+            "comment": "Actual Start:9:30\nMachine had issue",
+            "sprintName": "Pipeline 21",
+            "estimatedHours": "14.0",
+            "taskTitle": "IKS demo page and functionality 06092021",
+            "projecttitle": "Addon - UI",
+            "projectId": "68",
+            "actualStart": "06/09/2021 11:25:18",
+            "taskId": 24020,
+            "taskStatus": "Done",
+            "scheduledStart": "06/09/2021"
+        },
+        {
+            "scheduledEnd": "06/08/2021",
+            "actualEnd": "06/09/2021 00:56:45",
+            "userName": "Sheik Masthan",
+            "sprintId": "1328",
+            "taskType": "T",
+            "totalhrs": 5.25,
+            "currentUserId": 468,
+            "sprintName": "CHCCA88",
+            "estimatedHours": "6.0",
+            "taskTitle": "Tab Structure and Multiple button implementation task continue",
+            "projecttitle": "CHC-Coding Ai\n",
+            "projectId": "26",
+            "actualStart": "06/08/2021 14:14:50",
+            "taskId": 23956,
+            "taskStatus": "Done",
+            "scheduledStart": "06/08/2021"
+        },
+        {
+            "scheduledEnd": "06/08/2021",
+            "actualEnd": "06/08/2021 20:30:00",
+            "userName": "manikandan",
+            "sprintId": "1333",
+            "taskType": "T",
+            "totalhrs": 11.07,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD82",
+            "estimatedHours": "12.0",
+            "taskTitle": "Demo changes 06082021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/08/2021 09:22:57",
+            "taskId": 23913,
+            "taskStatus": "Done",
+            "scheduledStart": "06/08/2021"
+        },
+        {
+            "scheduledEnd": "06/07/2021",
+            "actualEnd": "06/07/2021 22:16:58",
+            "userName": "Sheik Masthan",
+            "sprintId": "1328",
+            "taskType": "T",
+            "totalhrs": 5.19,
+            "currentUserId": 468,
+            "sprintName": "CHCCA88",
+            "estimatedHours": "6.0",
+            "taskTitle": "Tab Structure and Multiple button implementation ",
+            "projecttitle": "CHC-Coding Ai\n",
+            "projectId": "26",
+            "actualStart": "06/07/2021 16:57:08",
+            "taskId": 23903,
+            "taskStatus": "Done",
+            "scheduledStart": "06/07/2021"
+        },
+        {
+            "scheduledEnd": "06/05/2021",
+            "actualEnd": "06/05/2021 23:00:00",
+            "userName": "manikandan",
+            "sprintId": "1308",
+            "taskType": "T",
+            "totalhrs": 12.28,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD79",
+            "estimatedHours": "12.0",
+            "taskTitle": "Multiple EM 06052021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/05/2021 10:31:20",
+            "taskId": 23834,
+            "taskStatus": "Done",
+            "scheduledStart": "06/05/2021"
+        },
+        {
+            "scheduledEnd": "06/04/2021",
+            "actualEnd": "06/04/2021 20:00:00",
+            "userName": "manikandan",
+            "sprintId": "1308",
+            "taskType": "T",
+            "totalhrs": 10.25,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD79",
+            "estimatedHours": "10.0",
+            "taskTitle": "Multiple EM 06042021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/04/2021 09:34:05",
+            "taskId": 23772,
+            "taskStatus": "Done",
+            "scheduledStart": "06/04/2021"
+        },
+        {
+            "scheduledEnd": "06/03/2021",
+            "actualEnd": "06/03/2021 21:43:28",
+            "userName": "Sheik Masthan",
+            "sprintId": "1316",
+            "taskType": "T",
+            "totalhrs": 9.1,
+            "currentUserId": 468,
+            "sprintName": "MEDBILL 20",
+            "estimatedHours": "8.0",
+            "taskTitle": "JS file not loading issue",
+            "projecttitle": "Medical Billing",
+            "projectId": "14",
+            "actualStart": "06/03/2021 12:32:42",
+            "taskId": 23740,
+            "taskStatus": "Done",
+            "scheduledStart": "06/03/2021"
+        },
+        {
+            "scheduledEnd": "06/03/2021",
+            "actualEnd": "06/03/2021 22:08:15",
+            "userName": "manikandan",
+            "sprintId": "1308",
+            "taskType": "T",
+            "totalhrs": 0,
+            "currentUserId": 22,
+            "comment": "Actual Start: 10:00\nActual End: 20:00",
+            "sprintName": "VMGCOD79",
+            "estimatedHours": "8.0",
+            "taskTitle": "HealthPro 06032021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/03/2021 22:08:01",
+            "taskId": 23706,
+            "taskStatus": "Done",
+            "scheduledStart": "06/03/2021"
+        },
+        {
+            "scheduledEnd": "06/02/2021",
+            "actualEnd": "06/02/2021 22:15:15",
+            "userName": "manikandan",
+            "sprintId": "1308",
+            "taskType": "T",
+            "totalhrs": 0,
+            "currentUserId": 22,
+            "comment": "Actual Start: 9:30",
+            "sprintName": "VMGCOD79",
+            "estimatedHours": "9.0",
+            "taskTitle": "Multiple EM tab novitas 06022021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/02/2021 22:14:40",
+            "taskId": 23691,
+            "taskStatus": "Done",
+            "scheduledStart": "06/02/2021"
+        },
+        {
+            "scheduledEnd": "06/01/2021",
+            "actualEnd": "06/01/2021 20:59:48",
+            "userName": "manikandan",
+            "sprintId": "1308",
+            "taskType": "T",
+            "totalhrs": 6.46,
+            "currentUserId": 22,
+            "sprintName": "VMGCOD79",
+            "estimatedHours": "6.5",
+            "taskTitle": "VMG multiple em 06012021",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/01/2021 14:12:50",
+            "taskId": 23604,
+            "taskStatus": "Done",
+            "scheduledStart": "06/01/2021"
+        },
+        {
+            "scheduledEnd": "06/01/2021",
+            "actualEnd": "06/01/2021 20:18:32",
+            "userName": "Sheik Masthan",
+            "sprintId": "1308",
+            "taskType": "T",
+            "totalhrs": 9.35,
+            "currentUserId": 468,
+            "sprintName": "VMGCOD79",
+            "estimatedHours": "8.0",
+            "taskTitle": "Error Classification design change Facility coding",
+            "projecttitle": "VMG Health Coding Compliance",
+            "projectId": "13",
+            "actualStart": "06/01/2021 10:43:03",
+            "taskId": 23584,
+            "taskStatus": "Done",
+            "scheduledStart": "06/01/2021"
+        }
+    ];
+	
+  
+    $(function () {
+	
+        $('#example-multiple-selected').multiselect({
+            includeSelectAllOption: true,
+            buttonWidth: 200,
+            enableFiltering: true,
+            enableCaseInsensitiveFiltering: true,
+            selectAllText: 'Check all!',
+            filterPlaceholder: 'Search Username...',
+          
+
+        });
+        
+        $('input[name="datefilter"]').daterangepicker({
+            autoUpdateInput: true,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+    
+        var options = document.getElementById('example-multiple-selected').options;
+        var name = [];
+        $("#loadData").click(function () {
+           
+            //console.log(options.length)
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].selected) {
+                    name.push(options[i].innerHTML);
+                }
+                //console.log(name);
+            }
+            // console.log(name.length)
+            // console.log(document.getElementById("name1").innerHTML);
+            //console.log(document.getElementById("name2").innerHTML);
+            document.getElementById('databody').innerHTML = "";
+            var rangedate = document.getElementById("data").value;
+            var startdate = rangedate.substring(0, 10);
+            var enddate = rangedate.substring(13, 23);
+            var result, result1;
+            //console.log(options.length)
+            // console.log(name.length)
+            // var arrtostring = name.toString();
+            //if all are selected then display all employee data
+            for (var x = 0; x < name.length; x++) {
+                if (options.length == name.length) {
+                    result = data.filter(function (obj) {
+                        return obj.scheduledStart >= startdate && obj.scheduledEnd <= enddate;
+                    });
+                    while (name.length > 0) {
+                        name.pop();
+                    }
+                } else {
+                    result = data.filter(function (obj) {
+                        return obj.scheduledStart >= startdate && obj.scheduledEnd <= enddate && obj.userName == name[x];
+                    });
+                    while (name.length > 0) {
+                        name.pop();
+                    }
+                }
+            }
+				$('#table_1').DataTable().destroy();
+			 $('#databody').empty();
+            var rowdata;
+            for (var i = 0; i < result.length; i++) {
+                var rowdata = "<tr>" +
+                    "<td>" + result[i].taskId + "</td>" +
+                    "<td>" + result[i].userName + "</td>" +
+                    "<td>" + result[i].taskType + "</td>" +
+                    "<td>" + result[i].scheduledStart + "</td>" +
+                    "<td>" + result[i].scheduledEnd + "</td>" +
+                    "<td>" + result[i].projecttitle + "</td>" +
+                    "<td>" + result[i].sprintName + "</td>" +
+                    "<td>" + result[i].estimatedHours + "</td>" +
+                    "<td>" + result[i].totalhrs + "</td>" +
+                    "<td>" + result[i].taskStatus + "</td>" +
+                    "</tr>";
+
+                document.getElementById('databody').innerHTML += rowdata;
+                //for(var j = 0; j < result.length; j++){
+                //  delete result[j];
+                //}
+            }
+				call();
+				
+				
+        });
+		//$('#table_1').DataTable().destroy();
+
+       
+    });
+	
+	
+function call(){
+
+
+var table = $("#table_1").DataTable({
+            "searching": true,
+            "paging": true,
+            "pageLength": 5,
+            "lengthMenu": [5, 10, 15, 25],
+            "ordering":true,
+        });
+		
+    
+}
+
+
+ 
+	
+	
+	
+
+    
+
+
+</script>
+
+
+</html>
