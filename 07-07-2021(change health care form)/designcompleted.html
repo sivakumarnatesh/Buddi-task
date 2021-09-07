@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap-multiselect.css">
+  <link rel="stylesheet" href="assets/daterangepicker.css">
+  <link rel="stylesheet" href="assets/jquery.dataTables.min.css">
+  <!-- <link rel="stylesheet" href="datatable.css"> -->
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css"> -->
+  <link href="assets/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/daterangepicker.css">
+  <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/bootstrap-multiselect.css">
+
+  <title>Change health care</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+          <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-5 d-none d-sm-inline"><img src="assets/healthcare_logo.jpg"
+                style="width:220px;height:55px"></span>
+          </a>
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link align-middle px-0 text-white">
+                <span class="ms-0 d-none d-sm-inline"><i class="fa fa-tachometer" aria-hidden="true"></i>Executive
+                  Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-area-chart" aria-hidden="true"></i> Assign
+                  Charts</span> </a>
+              <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Coding
+                  Module</span></a>
+            </li>
+            <li>
+              <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Auditing
+                  Module</span></a>
+              <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                <li class="w-100">
+                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  Review</span> </a>
+              <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                <li class="w-100">
+                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-search" aria-hidden="true"></i> Search
+                  Charts</span> </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-bars" aria-hidden="true"></i> QACR</span> </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-bars" aria-hidden="true"></i> Reporting
+                  Module</span> </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-book" aria-hidden="true"></i> BUDDI Encoder</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-calculator" aria-hidden="true"></i> Admin
+                  Module</span> </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <span class="ms-1 d-none d-sm-inline"><i class="fa fa-link" aria-hidden="true"></i> API Interface</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <i class="fa fa-check-circle-o" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">
+                  Configuration</span> </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <span class="ms-0 d-none d-sm-inline"><i class="fa fa-book"
+                    aria-hidden="true"></i>PathwayManagment</span> </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-0 align-middle text-white">
+                <i class="fa fa-phone" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline"> Support</span> </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="col mb-3">
+        <div class="row">
+          <div class="col-12 bg-dark text-white pt-2 pe-5">
+
+            <div class="text-end">
+              <button class="bg-dark text-white border bordered-dark p-1">A-</button>
+              <button class="bg-dark text-white border bordered-dark p-1">A</button>
+              <button class="bg-dark text-white border bordered-dark p-1">A+</button>
+              <button class="bg-dark text-white border bordered-dark p-1"><i class="fa fa-expand"
+                  aria-hidden="true"></i></button>
+              <i class="fa fa-commenting-o p-1" aria-hidden="true"></i>
+              <i class="fa fa-pencil-square-o p-1" aria-hidden="true"></i>
+              <i class="fa fa-user-circle-o p-1"></i>
+              <select class="bg-dark text-white mb-3 p-1 border-0">
+                <option selected>Manikandan</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+
+            </div>
+          </div>
+        </div>
+        <!--navigation bar starts-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">Home ></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">User ></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Add ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!--login info-->
+        <div class="bg-light mt-3">
+
+          <div class="container-fluid bg-light">
+
+            <div class="row g-5">
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-12 bg-white card shadow-lg">
+                    <p class="border-bottom p-3 bg-white"><i class="fa fa-bars" aria-hidden="true"></i><span
+                        class="text-info"> LOGIN INFO</span>
+                    </p>
+                    <div class="row">
+                      <div class="col-6 text-end">
+                        User Name *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo1"></div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                          <input type="text" class="form-control" id="usernames" placeholder="Username">
+
+                        </div>
+
+                      </div>
+                      <div class="col-6 text-end">
+                        Password *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo2"></div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"
+                              aria-hidden="true"></i></span>
+                          <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        Confirm password *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo3"></div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"
+                              aria-hidden="true"></i></span>
+                          <input type="password" class="form-control" id="confirmpassword"
+                            placeholder="Confirm password">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        User Type *
+                      </div>
+                      <div class="col-6 mb-3">
+                        <div id="demo4"></div>
+                        <select class="form-select" id="usertype">
+                          <option selected>select</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="col-6 text-end">
+                        Provider NPI *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo5"></div>
+                        <div class="input-group mb-3">
+                          <input type="text" class="form-control" id="npi" placeholder="NPI" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+
+                      <div class="col-6">
+                        <div id="demo6"></div>
+                        <div class="input-group mb-3 d-flex justify-content-between">
+                          <p> Screen Lock Timeout(mins) * &nbsp; </p>
+                          <input type="text" onkeypress="return onlyNumberKey(event)" id="screen" class="form-control"
+                            placeholder="20">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div id="demo7"></div>
+                        <div class="input-group mb-3 d-flex justify-content-between">
+                          <p> Session Timeout(mins) *&nbsp; </p>
+                          <input type="text" onkeypress="return onlyNumberKey(event)" id="session" class="form-control"
+                            placeholder="30">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--user demographics starts -->
+              <div class="col-6 ">
+                <div class="row">
+                  <div class="col-12 card shadow-lg">
+                    <p class="border-bottom p-3 bg-white"><i class="fa fa-bars" aria-hidden="true"></i><span
+                        class="text-info"> USER DEMOGRAPHICS</span>
+                    </p>
+                    <div class="row">
+                      <div class="col-6 text-end">
+                        First Name *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo8"></div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-font"
+                              aria-hidden="true"></i></span>
+                          <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                        </div>
+
+                      </div>
+                      <div class="col-6 text-end">
+                        Last Name *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo9"></div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-font"
+                              aria-hidden="true"></i></span>
+                          <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        Gender *
+                      </div>
+                      <div class="col-6 mb-3">
+                        <div id="demo10"></div>
+                        <select class="form-select" id="gender" aria-label="Default select example">
+                          <option selected>Select</option>
+                          <option value="1">Male</option>
+                          <option value="2">Female</option>
+                        </select>
+                      </div>
+
+                      <div class="col-6 text-end">
+                        Date of Birth *
+                      </div>
+                      <div class="col-6">
+                        <div class="input-group mb-3">
+
+                          <input type="text" id="dob" class="form-control">
+
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        Email Address *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo11"></div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"
+                              aria-hidden="true"></i></span>
+                          <input type="text" class="form-control" id="email" placeholder="Email Address">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        Phone No *
+                      </div>
+                      <div class="col-6">
+                        <div class=" mb-3">
+                          <div id="demo12"></div>
+                          <input type="text" onkeypress="return onlyNumberKey(event)" id="phone" class="form-control"
+                            placeholder="Phone No">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        Address Line *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo13"></div>
+                        <div class="input-group mb-3">
+
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-font"
+                              aria-hidden="true"></i></span>
+                          <input type="text" class="form-control" id="address" placeholder="Address Line">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        City *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo14"></div>
+                        <div class="input-group mb-3">
+
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-font"
+                              aria-hidden="true"></i></span>
+
+                          <input type="text" class="form-control" id="city" placeholder="City">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        State *
+                      </div>
+                      <div class="col-6">
+                        <div id="demo15"></div>
+                        <div class="input-group mb-3">
+
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-font"
+                              aria-hidden="true"></i></span>
+
+                          <input type="text" class="form-control" id="state" placeholder="State">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end ">
+                        Zip code *
+                      </div>
+                      <div class="col-6 ">
+                        <div id="demo16"></div>
+                        <div class="input-group mb-3">
+
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-font"
+                              aria-hidden="true"></i></span>
+                          <input type="text" onkeypress="return onlyNumberKey(event)" id="zipcode" class="form-control"
+                            placeholder="Zip code">
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!--user demos -->
+              <div style="margin-top: -70px;" class="col-6 ">
+                <div class="row">
+                  <div class="col-12 card shadow-lg">
+                    <p class="border-bottom p-3 bg-white"><i class="fa fa-bars" aria-hidden="true"></i><span
+                        class="text-info"> USER DEMOS</span></p>
+                    <div class="row">
+                      <div class="col-12">
+                        <p>select appropriate roles for the user *</p>
+                        <div class="form-check">
+                          <div id="demo17"></div>
+                          <input class="form-check-input" type="radio" id="specific" name="flexRadioDefault"
+                            id="flexRadioDefault1">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Specific roles
+                          </label>
+                        </div>
+
+                      </div>
+                      <div class="col-12">
+                        <p style="background-color: lightgray;width: fit-content;" class="p-1 ">Application
+                          specification roles</p>
+                      </div>
+                      <div class="row">
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Allocation-Coding
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Allocation-Review
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Coding
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Peruser/DataAnalyst
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Data Management
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              External Auditing
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Facility Management
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Queue Management
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Review Codes
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Rule Manager
+                            </label>
+                          </div>
+
+
+                        </div>
+                        <div class="col-4 mb-3">
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              User Management
+                            </label>
+                          </div>
+
+
+                        </div>
+                      </div>
+
+
+
+
+
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!--others-->
+              <div class="col-6 ">
+                <div class="row">
+                  <div class="col-12 card shadow-lg">
+                    <p class="border-bottom p-3 bg-white"><i class="fa fa-bars" aria-hidden="true"></i><span
+                        class="text-info"> OTHERS</span></p>
+                    <div class="row">
+
+
+
+                      <div class="col-6 text-end">
+                        Reporting To
+                      </div>
+                      <div class="col-6 mb-3">
+                        <div id="demo18"></div>
+                        <select class="form-select" id="report" aria-label="Default select example">
+                          <option selected>Select</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="col-6 text-end">
+                        Is Billable
+                      </div>
+                      <div class="col-6 mb-3">
+                        <div id="demo19"></div>
+                        <input type="text" id="bill" placeholder="Is billable" class="form-control">
+                      </div>
+                      <div class="col-6 text-end">
+                        Termination Date
+                      </div>
+                      <div class="col-6">
+                        <div class="input-group mb-3">
+
+                          <input type="text" class="form-control" id="terminate">
+                        </div>
+                      </div>
+                      <div class="col-6 text-end">
+                        Deallocate charts
+                      </div>
+                      <div class="col-6 mb-3">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!--coding target setting-->
+              <div class="col-12 bg-white card shadow-lg">
+
+                <p class="border-bottom p-3 bg-white"><i class="fa fa-bars" aria-hidden="true"></i><span
+                    class="text-info"> CODING TARGET SETTING</span></p>
+                <div class="row">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-3 text-end">
+                      <label for="inputPassword6" class="col-form-label"> Starting Count</label>
+                    </div>
+                    <div class="col-3">
+                      <div id="demo20"></div>
+                      <input type="text" id="start" onkeypress="return onlyNumberKey(event)" class="form-control"
+                        placeholder="0">
+                    </div>
+                    <div class="col-3 text-end">
+                      <label for="inputPassword6" class="col-form-label"> Count Increase By Every</label>
+                    </div>
+                    <div class="col-3">
+                      <div id="demo21"></div>
+                      <input type="text" id="countincrease" onkeypress="return onlyNumberKey(event)"
+                        class="form-control" placeholder="0">
+                    </div>
+                    <div class="col-3 text-end">
+                      <label for="inputPassword6" class="col-form-label mb-5"> Increase Count By</label>
+                    </div>
+                    <div class="col-3">
+                      <div id="demo22"></div>
+                      <input type="text" id="increasecount" onkeypress="return onlyNumberKey(event)"
+                        class="form-control mb-5" placeholder="0">
+                    </div>
+                    <div class="col-3 text-end">
+
+                      <label for="inputPassword6" class="col-form-label mb-5"> Max Target</label>
+                    </div>
+                    <div class="col-3 ">
+                      <div id="demo23"></div>
+                      <input type="text" id="maxtarget" onkeypress="return onlyNumberKey(event)"
+                        class="form-control mb-5" placeholder="0">
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <!--Queue part-->
+              <div class="col-12 bg-white card shadow-lg">
+
+                <p class="border-bottom p-3 bg-white"><i class="fa fa-bars" aria-hidden="true"></i><span
+                    class="text-info"> QUEUE/CLIENT STATUSES</span></p>
+                <div class="row">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-3 text-end">
+                      <label for="inputPassword6" class="col-form-label"> Queue/client Statuses *</label>
+                    </div>
+                    <div class="col-9">
+                      <div id="demo24"></div>
+                      <select id="mySelect" class="form-select">
+                        <option>Apple</option>
+                        <option>Pear</option>
+                        <option>Banana</option>
+                        <option>Orange</option>
+                      </select>
+                      <!-- <input id="newvalue" type="text" /> -->
+                      <!-- <button type="button" onclick="myFunction()">Insert option</button> -->
+
+                    </div>
+                    <div class="col-12 ms-5 text-success">
+                      <!-- <p class="text-info">Click here to add Queue which is not listed</p> -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="text-info mb-3" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Click here to add Queue which is not listed
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <!-- <input type="text" id="new-state"placeholder="Add new option"/> -->
+                              <input id="newvalue" type="text" placeholder="Please enter new option" />
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <!-- <button type="button"id="btn-add-state" class="btn btn-primary">Add to queue</button> -->
+                              <button type="button" onclick="myFunction()" class="btn btn-primary">Add option</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <!--Facility and speciality -->
+              <div class="col-12 bg-white card shadow-lg">
+
+                <p class="border-bottom p-3 bg-white"><i class="fa fa-bars" aria-hidden="true"></i><span
+                    class="text-info"> FACILITY AND SPECIALITY</span></p>
+                <div class="row">
+                  <div class="row g-3 align-items-center">
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Select Facility and Mapped Speciality
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row">
+                              <div class="col-1">
+                                <p>Facility *</p>
+
+                              </div>
+                              <div class="col-2">
+                                <select class="form-select" id="aaa">
+                                  <option value="AAA">AAA</option>
+                                  <option value="One">One</option>
+                                  <option value="Two">Two</option>
+                                  <option value="Three">Three</option>
+                                </select>
+                              </div>
+                              <div class="col-2">
+                                <p> Speciality *</p>
+
+                              </div>
+                              <div class="col-7 mt-3 border bordered-dark">
+                                <div role="group" aria-label="Basic checkbox toggle button group" class="mt-3">
+
+                                  <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                  <label class="btn btn-outline-primary" id="modal1"
+                                    for="btncheck1">Anesthesia-Outpatient</label>
+                                </div>
+                                <div role="group" aria-label="Basic checkbox toggle button group" class="mt-2 mb-3">
+                                  <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                                  <label class="btn btn-outline-primary" id="modal2" for="btncheck2">Emergency Room
+                                    Outpatient</label>
+                                </div>
+                                <div role="group" aria-label="Basic checkbox toggle button group" class="mt-2 mb-3">
+                                  <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                                  <label class="btn btn-outline-primary" id="modal3" for="btncheck3">HCC-
+                                    Outpatient</label>
+
+                                </div>
+                                <div role="group" aria-label="Basic checkbox toggle button group" class="mt-2">
+                                  <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                                  <label class="btn btn-outline-primary" id="modal4"
+                                    for="btncheck4">Pathology-Outpatient</label>
+                                </div>
+                                <div role="group" aria-label="Basic checkbox toggle button group" class="mt-2 mb-3">
+                                  <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                                  <label class="btn btn-outline-primary" id="modal5"
+                                    for="btncheck5">Radiology-Outpatient</label>
+                                </div>
+                                <div role="group" aria-label="Basic checkbox toggle button group" class="mt-2 mb-3">
+                                  <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                                  <label class="btn btn-outline-primary" id="modal6"
+                                    for="btncheck6">Surgery-Outpatient</label>
+                                </div>
+                                <div role="group" aria-label="Basic checkbox toggle button group" class="mt-2 mb-3">
+                                  <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                                  <label class="btn btn-outline-primary" id="modal7"
+                                    for="btncheck7">UrgentCare-Outpatient</label>
+                                </div>
+                              </div>
+
+                              <p style="margin-left: 45%;">Select all appropriate specialities with their service line
+                                and click on Add </p>
+
+                            </div>
+                            <div class="col-12 text-end">
+                              <button class="btn btn-success m-2" onclick="modalContainer()">Add</button>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Select Speciality and Mapped Facility
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-2 text-end">
+                            <p> Service Line *</p>
+
+                          </div>
+                          <div class="col-2">
+                            <select class="form-select"id="service">
+                              <option value="Outpatient">Outpatient</option>
+                              <option value="One">One</option>
+                              <option value="Two">Two</option>
+                              <option value="Three">Three</option>
+                            </select>
+                          </div>
+                          <div class="col-2 text-end">
+                            <p>Speciality *</p>
+
+                          </div>
+                          <div class="col-2">
+                            <select class="form-select" id="medical">
+                              <option selected>Anesthesia-Outpatient</option>
+                              <option value="1">Emergency Room Outpatient</option>
+                              <option value="2">HCC Outpatient</option>
+                              <option value="3">Pathology-Outpatient</option>
+                              <option value="4">Radiology-Outpatient</option>
+                              <option value="5">Surgery-Outpatient</option>
+                              <option value="6">UrgentCare-Outpatient</option>
+                            </select>
+                          </div>
+                          <div class="col-2 text-end">
+                            <p> Facility *</p>
+
+                          </div>
+                          <div class="col-2">
+
+                            <select id="example-multiple-selected" multiple="multiple">
+                              <option value="1">Option 1</option>
+                              <option value="2">Option 2</option>
+                              <option value="3">Option 3</option>
+                              <option value="4">Option 4</option>
+                              <option value="5">Option 5</option>
+                              <option value="6">Option 6</option>
+                            </select>
+                          </div>
+
+
+                          <div class="col-12 text-end">
+                            <button class="btn btn-success m-2" onclick="modal2container()">Add</button>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+        <!-- <div style="background-color:white;" id="facilitycheck" class="container text-left p-3 mt-2">
+          <div class="text-end">
+            <button type="button" class="btn-close" onclick="empty1()" aria-label="Close"></button>
+          </div>
+
+          <div class="outer">
+            <h6>Facility</h6>
+            <div id="mappedfacility"></div>
+            <h6>Speciality</h6>
+            <div id="mappedfacilitycheck"></div>
+          </div>
+
+        </div> -->
+        <div id="new" style="background-color:pink;" class="mt-3">
+
+        </div>
+        <div id="new1" style="border: 1px solid black;" class="mt-3">
+
+        </div>
+
+
+
+        <!-- <div style="background-color:white;" id="specialitydropdown" class="container text-left p-3 mt-2">
+          <div class="text-end">
+            <button type="button" class="btn-close" onclick="empty2()" aria-label="Close"></button>
+          </div>
+          <div>
+
+            <h6>Facility</h6>
+            <div id="mappedspeciality1"></div>
+
+
+            <h6>Speciality</h6>
+            <div id="mappedspeciality"></div>
+            
+          </div>
+
+        </div> -->
+        <!-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Facility</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Hello, world! This is a toast message.
+          </div>
+        </div> -->
+        <!-- <input type="hidden" id="serviceline"> -->
+        <input type="hidden" id="speciality">
+        <input type="hidden" id="facility">
+        <br>
+        <div style="background-color: lightgray;" class="container text-center p-3">
+          <button class="btn btn-success" onclick="myValidation()"><i class="fa fa-check" aria-hidden="true"></i>
+            Submit</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script> -->
+<script src="assets/popper.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<script src="./assets/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+
+<script src="assets/moment.min.js"></script>
+<script src="assets/daterangepicker.min.js"></script>
+<script src="assets/bootstrap-multiselect.js"></script>
+
+<script type="text/javascript">
+    
+  function modal2container() {
+    var outputString = [];
+    //getting speciality element
+    var y = document.getElementById("medical");
+    //getting speciality index
+    var z = y.selectedIndex;
+    //getting current speciality value
+    var special = y.options[z].text;
+    //getting multiselect collections
+    var multiselect = document.getElementById('example-multiple-selected').options;
+    //store the selected multiselect options into outputString array
+    for (let i = 0; i < multiselect.length; i++) {
+      if (multiselect[i].selected) {
+        outputString.push(multiselect[i].text);
+      }
+    }
+    var str = outputString.toString();
+    //console.log(outputString.length)
+    if(document.getElementById("speciality").value == "" && document.getElementById("facility").value == "" && outputString.length == 1){
+      document.getElementById("speciality").value = special; 
+      document.getElementById("facility").value = facility;
+      //console.log(typeof document.getElementById("facility").value)
+       //dynamically create div tag
+       var para = document.createElement("div");
+      //dynamically set bgcolor
+      para.style.backgroundColor="#00ff84";
+      //dynamically create text node are speciality,facility
+      var node3 = document.createTextNode("Facility : "+document.getElementById("facility").value+" ");
+       //create a line break
+       var linebreak = document.createElement("br");
+    
+      var node2 = document.createTextNode("Speciality : "+document.getElementById("speciality").value+" ");
+      
+      //adding this speciality,facility to div child
+      para.appendChild(node3);
+      para.appendChild(linebreak);
+      para.appendChild(node2);
+      var element = document.getElementById("new1");
+      element.appendChild(para);
+    }
+    else if(document.getElementById("speciality").value != special && document.getElementById("facility").value != facility && outputString.length == 1){
+      document.getElementById("speciality").value += special; 
+      document.getElementById("facility").value += facility;
+      
+      //dynamically create div tag
+      var para = document.createElement("div");
+      //dynamically set bgcolor
+      para.style.backgroundColor="#00ff84";
+      //dynamically create text node are speciality,facility
+      var node3 = document.createTextNode("Facility : "+document.getElementById("facility").value+" ");
+       //create a line break
+       var linebreak = document.createElement("br");
+    
+      var node2 = document.createTextNode("Speciality : "+document.getElementById("speciality").value+" ");
+      
+      //adding this speciality,facility to div child
+      para.appendChild(node2);
+      para.appendChild(linebreak);
+      para.appendChild(node3);
+      var element = document.getElementById("new1");
+      element.appendChild(para);
+    }
+    else if(outputString.length > 1 && document.getElementById("speciality").value != special && outputString.includes(document.getElementById("facility").value) == false){
+      
+      for(let j = 0; j < outputString.length; j++){
+      //dynamically create a div tag
+      var para = document.createElement("div");
+      //display the facility value
+      var node = document.createTextNode("Facility : "+outputString[j]);
+      //create a line break
+      var linebreak = document.createElement("br");
+    
+      //display speciality dropdown value
+      var node1 = document.createTextNode("Speciality : "+special);
+      para.appendChild(node);
+      para.appendChild(linebreak);
+      para.appendChild(node1);
+      var element = document.getElementById("new1");
+      element.appendChild(para);
+    }
+    }
+    else if(document.getElementById("speciality").value == special && document.getElementById("facility").value == facility){
+      alert("same value cannot insert");
+    }
+
+  }
+
+  var a1 = 0, a2 = 0, a3 = 0, a4 = 0;
+  //adding modal container
+  function modalContainer() {
+    var arr = [];
+    var dropdown = [];
+    //facility dropdown tag element
+    var x = document.getElementById("aaa");
+    var option = document.getElementById("aaa").options;
+    //getting dropdown index
+    var val = x.selectedIndex;
+    //pushing checked buttons into array
+    for (var i = 0; i < 7; i++) {
+      var check = document.getElementById("btncheck" + (i + 1));
+
+      if (check.checked == true) {
+        arr.push(document.getElementById("modal" + (i + 1)).innerHTML);
+
+      }
+      if (check.checked == false) {
+
+      }
+    }
+    // var prevlen = arr.length;
+    
+    var para = document.createElement("div");
+    // var k = 0;
+    if (option[val].text == "AAA") {
+      if (a1 == 0) {
+        a1++;
+        
+        var node = document.createTextNode("Facility : " + option[val].text);
+        var linebreak = document.createElement("br");
+        var node1 = document.createTextNode("Speciality : " + arr);
+        para.appendChild(node);
+        para.appendChild(linebreak);
+        para.appendChild(node1);
+        var element = document.getElementById("new");
+        element.appendChild(para);
+      }
+    //   else if(a1 > 0){
+        
+    //     for (var i = 0; i < 7; i++) {
+    //   var check = document.getElementById("btncheck" + (i + 1));
+
+    //   if (check.checked == true) {
+    //     arr.push(document.getElementById("modal" + (i + 1)).innerHTML);
+
+    //   }
+    //   if (check.checked == false) {
+
+    //   }
+    // }
+    // var currentlen = arr.length;
+    // if(prevlen != currentlen){
+    //   for(var j = 0; j < prevlen; j++){
+    //     arr.push(document.getElementById("modal" + (j + 1)).innerHTML);
+    //   }
+      // var node = document.createTextNode("Facility : " + option[val].text);
+      //   var linebreak = document.createElement("br");
+      //   var node1 = document.createTextNode("Speciality : " + arr);
+      //   para.appendChild(node);
+      //   para.appendChild(linebreak);
+      //   para.appendChild(node1);
+      //   var element = document.getElementById("new");
+      //   element.appendChild(para);
+    // }
+    //   }
+      // else {
+      //   alert("cannot insert old Facility value")
+      // }
+    }
+    else if (option[val].text == "One") {
+      if (a2 == 0) {
+        a2++;
+        var node = document.createTextNode("Facility : " + option[val].text);
+        var linebreak = document.createElement("br");
+        var node1 = document.createTextNode("Speciality : " + arr);
+        para.appendChild(node);
+        para.appendChild(linebreak);
+        para.appendChild(node1);
+        var element = document.getElementById("new");
+        element.appendChild(para);
+      }
+      else {
+        alert("cannot insert old Facility value")
+      }
+    }
+
+    else if (option[val].text == "Two") {
+      if (a3 == 0) {
+        a3++;
+        var node = document.createTextNode("Facility : " + option[val].text);
+        var linebreak = document.createElement("br");
+        var node1 = document.createTextNode("Speciality : " + arr);
+        para.appendChild(node);
+        para.appendChild(linebreak);
+        para.appendChild(node1);
+        var element = document.getElementById("new");
+        element.appendChild(para);
+      }
+      else {
+        alert("cannot insert old Facility value")
+      }
+    }
+
+    else if (option[val].text == "Three") {
+      if (a4 == 0) {
+        a4++;
+        var node = document.createTextNode("Facility : " + option[val].text);
+        var linebreak = document.createElement("br");
+        var node1 = document.createTextNode("Speciality : " + arr);
+        para.appendChild(node);
+        para.appendChild(linebreak);
+        para.appendChild(node1);
+        var element = document.getElementById("new");
+        element.appendChild(para);
+      }
+      else {
+        alert("cannot insert old Facility value")
+      }
+    }
+
+  }
+
+  //   if(document.getElementById("btncheck1").checked){
+  //     arr.push(document.getElementById("modal1").innerHTML);
+  //     console.log(arr[0])
+  //   }
+  //   else if(document.getElementById("btncheck1").checked == false && arr.includes("Anesthesia-Outpatient")){
+  //     arr.pop(document.getElementById("modal1").innerHTML);
+  //   }
+  //   if(document.getElementById("btncheck2").checked){
+  //   // document.getElementById("mappedfacilitycheck").innerHTML += document.getElementById("modal2").innerHTML + "  ";
+  //   arr.push(document.getElementById("modal2").innerHTML);
+  //   }
+  //   else if(document.getElementById("btncheck2").checked == false){
+  //     arr.pop(document.getElementById("modal2").innerHTML);
+  //   }
+  //  if(document.getElementById("btncheck3").checked){
+  //   // document.getElementById("mappedfacilitycheck").innerHTML += document.getElementById("modal2").innerHTML + "  ";
+  //   arr.push(document.getElementById("modal3").innerHTML);
+  //   }
+  //   else if(document.getElementById("btncheck3").checked == false){
+  //     arr.pop(document.getElementById("modal3").innerHTML);
+  //   }
+  //  if(document.getElementById("btncheck4").checked){
+  //   // document.getElementById("mappedfacilitycheck").innerHTML += document.getElementById("modal2").innerHTML + "  ";
+  //   arr.push(document.getElementById("modal4").innerHTML);
+  //   }
+  //   else if(document.getElementById("btncheck4").checked == false){
+  //     arr.pop(document.getElementById("modal4").innerHTML);
+  //   }
+  //   if(document.getElementById("btncheck5").checked){
+  //   // document.getElementById("mappedfacilitycheck").innerHTML += document.getElementById("modal2").innerHTML + "  ";
+  //   arr.push(document.getElementById("modal5").innerHTML);
+  //   }
+  //   else if(document.getElementById("btncheck5").checked == false){
+  //     arr.pop(document.getElementById("modal5").innerHTML);
+  //   }
+  //   if(document.getElementById("btncheck6").checked){
+  //   // document.getElementById("mappedfacilitycheck").innerHTML += document.getElementById("modal2").innerHTML + "  ";
+  //   arr.push(document.getElementById("modal6").innerHTML);
+  //   }
+  //   else if(document.getElementById("btncheck6").checked == false){
+  //     arr.pop(document.getElementById("modal6").innerHTML);
+  //   }
+  //  if(document.getElementById("btncheck7").checked){
+  //   // document.getElementById("mappedfacilitycheck").innerHTML += document.getElementById("modal2").innerHTML + "  ";
+  //   arr.push(document.getElementById("modal7").innerHTML);
+  //   }
+  //   else if(document.getElementById("btncheck7").checked == false){
+  //     arr.pop(document.getElementById("modal7").innerHTML);
+  //   }
+
+
+
+  //console.log(document.getElementById("btncheck1").checked.value);
+
+
+  //function for adding dropdown option
+  function myFunction() {
+    var x = document.getElementById("mySelect");
+    var z = document.getElementById("mySelect").options;
+    //console.log(z[0].text.toUpperCase())
+    var option = document.createElement("option");
+    option.innerHTML = document.getElementById("newvalue").value;
+    var count = 0;
+    for (let i = 0; i < z.length; i++) {
+      if (z[i].text.toUpperCase() != document.getElementById("newvalue").value.toUpperCase()) {
+        count++;
+      }
+      else {
+        alert("cannot able to add old value")
+      }
+    }
+    if (count == z.length) {
+      x.add(option);
+    }
+
+    document.getElementById("newvalue").value = "";
+  }
+  //number only allowed function
+  function onlyNumberKey(evt) {
+
+    // Only ASCII character in that range allowed
+    var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+    if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+      return false;
+    return true;
+  }
+  //function for adding dropdown option
+  // function addOption(){
+  //   var x = document.getElementById("state");
+  // var option = document.createElement("option");
+  // option.text = "Kiwi";
+  // x.add(option);
+  // }
+  //load the document
+  $(document).ready(function () {
+
+    //console.log( document.getElementById("speciality").value)
+    // $("#state").select2({
+    //   tags: true
+    // });
+
+    // $("#btn-add-state").on("click", function(){
+    //   var newStateVal = $("#new-state").val();
+    //   // Set the value, creating a new option if necessary
+    //   if ($("#state").find("option[value='" + newStateVal + "']").length) {
+    //     $("#state").val(newStateVal).trigger("change");
+    //   } else { 
+    //     // Create the DOM option that is pre-selected by default
+    //     var newState = new Option(newStateVal, newStateVal, true, true);
+    //     // Append it to the select
+    //     $("#state").append(newState).trigger('change');
+    //   } 
+    // });  
+
+    //intialising multiselect
+    $('#example-multiple-selected').multiselect({
+      allSelectedText: 'No option left ...',
+      includeSelectAllOption: true,
+      selectAllText: 'Check all!',
+      enableFiltering: true,
+      enableCaseInsensitiveFiltering: true,
+
+    });
+    //intialising daterange picker
+    $('#dob').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true,
+      "startDate": moment().startOf('hour').subtract(81000, 'days'),
+      "showDropdowns": true,
+      "minDate": moment().startOf('hour').subtract(80901, 'days'),
+      "maxDate": moment().startOf('hour'),
+      "linkedCalendars": false,
+    });
+    $('#terminate').daterangepicker({
+      singleDatePicker: true,
+      "startDate": moment().startOf('hour'),
+      "endDate": moment().startOf('hour').add(4000, 'days'),
+      "showDropdowns": true,
+      "linkedCalendars": false,
+      "minDate": moment(),
+      "maxDate": moment().startOf('hour').add(3469, 'days'),
+      startDate: moment().startOf('hour'),
+      endDate: moment().startOf('hour').add(4000, 'days'),
+
+    });
+  });
+  function myValidation() {
+    //user id
+    var userId = document.getElementById("usernames").value.trim();
+    if (userId == "" || userId.length > 8) {
+      document.getElementById("demo1").innerHTML = "Please enter username";
+      document.getElementById("demo1").style.visibility = "visible";
+      document.getElementById("demo1").style.color = "red";
+    }
+    else {
+      document.getElementById("demo1").innerHTML = "";
+    }
+    //password
+    var password = document.getElementById("password").value.trim();
+
+    if (!password.match(/[a-z]/g) || !password.match(/[A-Z]/g) || !password.match(/[0-9]/g) || !password.match(/[^a-zA-Z\d]/g) && password == "") {
+      document.getElementById("demo2").innerHTML = "Please enter password";
+      document.getElementById("demo2").style.visibility = "visible";
+      document.getElementById("demo2").style.color = "red";
+
+    }
+    else {
+      document.getElementById("demo2").innerHTML = "";
+
+    }
+
+    //confirm password
+    var confirmpassword = document.getElementById("confirmpassword").value.trim();
+
+    if (confirmpassword == "" || confirmpassword != password) {
+      document.getElementById("demo3").innerHTML = "Please enter confirm password";
+      document.getElementById("demo3").style.visibility = "visible";
+      document.getElementById("demo3").style.color = "red";
+
+    }
+    else {
+      document.getElementById("demo3").innerHTML = "";
+    }
+    //usertype
+    var usertype = document.getElementById("usertype").value;
+    if (usertype == "select") {
+      document.getElementById("demo4").innerHTML = "Please select user type";
+      document.getElementById("demo4").style.visibility = "visible";
+      document.getElementById("demo4").style.color = "red";
+    }
+    else {
+      document.getElementById("demo4").innerHTML = "";
+    }
+    //npi
+    var npi = document.getElementById("npi").value.trim();
+    if (npi == "") {
+      document.getElementById("demo5").innerHTML = "Please enter NPI";
+      document.getElementById("demo5").style.visibility = "visible";
+      document.getElementById("demo5").style.color = "red";
+    }
+    else {
+      document.getElementById("demo5").innerHTML = "";
+    }
+    //screen
+    var screen = document.getElementById("screen").value.trim();
+    if (screen == "") {
+      document.getElementById("demo6").innerHTML = "Enter screen lock Time out";
+      document.getElementById("demo6").style.visibility = "visible";
+      document.getElementById("demo6").style.color = "red";
+    }
+    else {
+      document.getElementById("demo6").innerHTML = "";
+    }
+    //session
+    var session = document.getElementById("session").value.trim();
+    if (session == "") {
+      document.getElementById("demo7").innerHTML = "Enter session Time out";
+      document.getElementById("demo7").style.visibility = "visible";
+      document.getElementById("demo7").style.color = "red";
+    }
+    else {
+      document.getElementById("demo7").innerHTML = "";
+    }
+    //firstname
+    var firstname = document.getElementById("firstname").value.trim();
+    if (firstname == "") {
+      document.getElementById("demo8").innerHTML = "Enter first name";
+      document.getElementById("demo8").style.visibility = "visible";
+      document.getElementById("demo8").style.color = "red";
+    }
+    else {
+      document.getElementById("demo8").innerHTML = "";
+    }
+    //lastname
+    var lastname = document.getElementById("lastname").value.trim();
+    if (lastname == "") {
+      document.getElementById("demo9").innerHTML = "Enter last name";
+      document.getElementById("demo9").style.visibility = "visible";
+      document.getElementById("demo9").style.color = "red";
+    }
+    else {
+      document.getElementById("demo9").innerHTML = "";
+    }
+    //gender
+    var gender = document.getElementById("gender").value;
+    if (gender == "Select") {
+      document.getElementById("demo10").innerHTML = "Please select gender";
+      document.getElementById("demo10").style.visibility = "visible";
+      document.getElementById("demo10").style.color = "red";
+    }
+    else {
+      document.getElementById("demo10").innerHTML = "";
+    }
+    //email
+    var email = document.getElementById("email").value.trim();
+
+    if (!email.match(/^([a-z0-9]+)@([a-zA-Z]+).([a-z]{2,8})$/) || email == "") {
+      document.getElementById("demo11").innerHTML = "Enter email id";
+      document.getElementById("demo11").style.visibility = "visible";
+      document.getElementById("demo11").style.color = "red";
+    }
+    else {
+      document.getElementById("demo11").innerHTML = "";
+    }
+    //phone number
+    var phone = document.getElementById("phone").value.trim();
+
+    if (phone == "" || phone.length != 10) {
+      document.getElementById("demo12").innerHTML = "Enter phone number";
+      document.getElementById("demo12").style.visibility = "visible";
+      document.getElementById("demo12").style.color = "red";
+    }
+    else {
+      document.getElementById("demo12").innerHTML = "";
+    }
+    //address
+    var address = document.getElementById("address").value.trim();
+    if (address == "") {
+      document.getElementById("demo13").innerHTML = "Enter address";
+      document.getElementById("demo13").style.visibility = "visible";
+      document.getElementById("demo13").style.color = "red";
+    }
+    else {
+      document.getElementById("demo13").innerHTML = "";
+    }
+    //city
+    var city = document.getElementById("city").value.trim();
+    if (city == "") {
+      document.getElementById("demo14").innerHTML = "Enter city";
+      document.getElementById("demo14").style.visibility = "visible";
+      document.getElementById("demo14").style.color = "red";
+    }
+    else {
+      document.getElementById("demo14").innerHTML = "";
+    }
+    //state
+    var state = document.getElementById("state").value.trim();
+    if (state == "") {
+      document.getElementById("demo15").innerHTML = "Enter state";
+      document.getElementById("demo15").style.visibility = "visible";
+      document.getElementById("demo15").style.color = "red";
+    }
+    else {
+      document.getElementById("demo15").innerHTML = "";
+    }
+    //zipcode
+    var zipcode = document.getElementById("zipcode").value.trim();
+    var reg = /^[0-9]{3,6}$/;
+    if (zipcode == "" || reg.test(zipcode) == false) {
+      document.getElementById("demo16").innerHTML = "Enter zipcode";
+      document.getElementById("demo16").style.visibility = "visible";
+      document.getElementById("demo16").style.color = "red";
+    }
+    else {
+      document.getElementById("demo16").innerHTML = "";
+    }
+    //specific roles
+    if (document.getElementById("specific").checked == false) {
+      document.getElementById("demo17").innerHTML = "please select specific roles";
+      document.getElementById("demo17").style.visibility = "visible";
+      document.getElementById("demo17").style.color = "red";
+    }
+    else {
+      document.getElementById("demo17").innerHTML = "";
+    }
+    //reporting to
+    if (document.getElementById("report").value == "Select") {
+      document.getElementById("demo18").innerHTML = "please select reporting to";
+      document.getElementById("demo18").style.visibility = "visible";
+      document.getElementById("demo18").style.color = "red";
+    } else {
+      document.getElementById("demo18").innerHTML = "";
+    }
+    //is billable
+    if (document.getElementById("bill").value == "") {
+      document.getElementById("demo19").innerHTML = "Enter billable";
+      document.getElementById("demo19").style.visibility = "visible";
+      document.getElementById("demo19").style.color = "red";
+    } else {
+      document.getElementById("demo19").innerHTML = "";
+    }
+    //start
+    if (document.getElementById("start").value == "") {
+      document.getElementById("demo20").innerHTML = "Enter start count value";
+      document.getElementById("demo20").style.visibility = "visible";
+      document.getElementById("demo20").style.color = "red";
+    } else {
+      document.getElementById("demo20").innerHTML = "";
+    }
+    //count increase
+    if (document.getElementById("countincrease").value == "") {
+      document.getElementById("demo21").innerHTML = "Enter count increase value";
+      document.getElementById("demo21").style.visibility = "visible";
+      document.getElementById("demo21").style.color = "red";
+    } else {
+      document.getElementById("demo21").innerHTML = "";
+    }
+    //increase count
+    if (document.getElementById("increasecount").value == "") {
+      document.getElementById("demo22").innerHTML = "Enter increase count value";
+      document.getElementById("demo22").style.visibility = "visible";
+      document.getElementById("demo22").style.color = "red";
+    } else {
+      document.getElementById("demo22").innerHTML = "";
+    }
+    //max target
+    if (document.getElementById("maxtarget").value == "") {
+      document.getElementById("demo23").innerHTML = "Enter max target value";
+      document.getElementById("demo23").style.visibility = "visible";
+      document.getElementById("demo23").style.color = "red";
+    } else {
+      document.getElementById("demo23").innerHTML = "";
+    }
+    //queue client/statuses
+    if (document.getElementById("queue").value == "Select") {
+      document.getElementById("demo24").innerHTML = "Select Client Statuses";
+      document.getElementById("demo24").style.visibility = "visible";
+      document.getElementById("demo24").style.color = "red";
+    } else {
+      document.getElementById("demo24").innerHTML = "";
+    }
+
+  }
+</script>
+
+</html>
