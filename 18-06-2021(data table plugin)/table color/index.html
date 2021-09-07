@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta means data about data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datatable</title>
+    <link rel="stylesheet" href="datatable.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<html>
+
+<body>
+    <h1 style="text-align: center;">DATA TABLE</h1>
+    <div class="container bg-info" style="margin-top: 3%;padding:20px 20px 20px 20px;">
+
+        <table id="example" class="display" style="width:100%">
+            <thead class="bg-warning">
+                <tr>
+                    <th data-bs-toggle="tooltip" data-bs-placement="bottom" title="ID number">ID</th>
+                    <th data-bs-toggle="tooltip" data-bs-placement="bottom" title="Date of Service">DOS</th>
+                    <th data-bs-toggle="tooltip" data-bs-placement="bottom" title="Procedure Code">CPT</th>
+                    <th data-bs-toggle="tooltip" data-bs-placement="bottom" title="Modifier data">Modifier</th>
+                    <th data-bs-toggle="tooltip" data-bs-placement="bottom" title="Diagnosis Code">DXCode</th>
+                    <th data-bs-toggle="tooltip" data-bs-placement="bottom" title="Charges">Charges</th>
+                </tr>
+            </thead>
+            <tbody id="databody">
+
+            </tbody>
+
+        </table>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script src="datatable.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "searching": true,
+            "paging": true,
+            "pageLength": 5,
+            "lengthMenu": [5, 10, 15, 25],
+            "order": [[1, "desc"]],
+            "ordering": true,
+			
+
+
+        });
+    });
+    //tabledata
+    var claims = [
+        { ID: 1, DOS: '01/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 2, DOS: '02/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 3, DOS: '03/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 4, DOS: '04/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 5, DOS: '05/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 6, DOS: '06/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 7, DOS: '07/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 8, DOS: '08/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 9, DOS: '09/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+        { ID: 10, DOS: '10/22/2021', CPT: '71045', Modifier: '77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63', DXCode: 'P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P28.89', Charges: 932342.41 },
+
+    ];
+    // function call
+    fetchdata(claims);
+    //function definition
+    var rowdata;
+    function fetchdata(claims) {
+        for (var i = 0; i < claims.length; i++) {
+            var rowdata = "<tr>" +
+                "<td>" + claims[i].ID + "</td>" +
+                "<td>" + claims[i].DOS + "</td>" +
+                "<td>" + claims[i].CPT + "</td>" +
+                "<td>" + claims[i].Modifier + "</td>" +
+                "<td>" + claims[i].DXCode + "</td>" +
+                "<td>" + claims[i].Charges + "</td>" +
+                "</tr>";
+
+            document.getElementById('databody').innerHTML += rowdata;
+        }
+    }
+</script>
+
+
+</html>
