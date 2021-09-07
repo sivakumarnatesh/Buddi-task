@@ -1,0 +1,16 @@
+body{
+    font-weight: bold;
+}
+li a{
+    border-bottom: 3px solid transparent;
+}
+li a:hover {
+    border-bottom: 3px solid #FB56C1;
+}
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
