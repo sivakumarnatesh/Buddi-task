@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiselect dropdown</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <!-- jquery -->
+    <script src="assets/jquery-3.5.1.slim.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="assets/bootstrap.bundle.min.js"></script>
+    <!-- bootstrap multiselect.css -->
+    <link rel="stylesheet" href="assets/bootstrap-multiselect.css">
+    <!-- bootstrap multiselect.js -->
+    <script src="assets/bootstrap-multiselect.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn-default {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dropdown-toggle::after {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .dropdown-menu {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body class="bg-primary">
+    <div class="container">
+        <div class="form-wrap card">
+            <header class="text-center mt-3">
+                <h3>Fill Form Details</h3>
+            </header>
+
+            <!-- first row -->
+            <div class="row mt-3 ml-2 mr-2">
+                <div class="col-3">
+                    <label class="form-label">Location</label><br>
+                    <input type="text" name="location" id="Location" placeholder="QCERPARIS"
+                        class="form-control border border-dark">
+                    <div id="demo1"></div>
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Department</label><br>
+                    <input type="text" name="department" id="Department" placeholder="Emergency Room"
+                        class="form-control border border-dark">
+                    <div id="demo2"></div>
+                </div>
+                <div class="col-2">
+                    <label class="form-label">Fasttrack</label><br>
+                    <div class="border border-dark rounded">
+                        <select id="fasttrack">
+                            <option value="option1">Route1</option>
+                            <option value="option2">Route2</option>
+                            <option value="option3">Route3</option>
+                            <option value="option4">Route4</option>
+                            <option value="option5">Route5</option>
+                            <option value="option6">Route6</option>
+                        </select>
+                    </div>
+                    <div id="demo3"></div>
+                </div>
+                <div class="col-4">
+                    <label class="form-label">Driver License Number</label><br>
+                    <input type="number" name="license" id="License" placeholder="Driver License Number"
+                        class="form-control border border-dark">
+                    <div id="demo4"></div>
+                </div>
+            </div>
+            <!-- second row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-4">
+                    <label class="form-label">Account Number</label><br>
+                    <input type="number" name="accountnumber" id="Accountnumber" placeholder="200013"
+                        class="form-control border border-dark">
+                </div>
+                <div class="col-2">
+                    <label class="form-label">MRN</label><br>
+                    <input type="text" name="mrn" id="Mrn" placeholder="MR380120"
+                        class="form-control border border-dark">
+                </div>
+
+                <div class="col-6">
+                    <label class="form-label">Social Security Number</label><br>
+                    <input type="number" name="security" id="Security" placeholder="xxx-xx-xxxx"
+                        class="form-control border border-dark">
+                </div>
+            </div>
+            <!-- third row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-4">
+                    <label class="form-label">First Name</label><br>
+                    <input type="text" name="firstname" id="Firstname" placeholder="Firstname"
+                        class="form-control border border-dark">
+                </div>
+                <div class="col-2">
+                    <label class="form-label">Middle Initial</label><br>
+                    <input type="text" name="initial" id="Initial" class="form-control border border-dark">
+                </div>
+
+                <div class="col-6">
+                    <label class="form-label">Race</label><br>
+                    <div class="border border-dark rounded">
+                        <select id="example-multiple-race" multiple="multiple">
+
+                            <option value="option1">option1</option>
+                            <option value="option2">option2</option>
+                            <option value="option3">option3</option>
+                            <option value="option4">option4</option>
+                            <option value="option5">option5</option>
+                            <option value="option6">option6</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- fourth row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-6">
+                    <label class="form-label">Last Name</label><br>
+                    <input type="text" name="lastname" id="Lastname" placeholder="Lastname"
+                        class="form-control border border-dark">
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Ethnicity</label><br>
+                    <div class="border border-dark rounded">
+                        <select id="example-multiple-ethnicity" multiple="multiple">
+                            <option value="option1">option1</option>
+                            <option value="option2">option2</option>
+                            <option value="option3">option3</option>
+                            <option value="option4">option4</option>
+                            <option value="option5">option5</option>
+                            <option value="option6">option6</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- fifth row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-3">
+                    <label class="form-label">Sex</label><br>
+                    <select class="form-control border border-dark" id="gender">
+                        <option selected disabled hidden>Gender</option>
+                        <option value="option1">Male</option>
+                        <option value="option2">Female</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Marital Status</label><br>
+                    <select class="form-control border border-dark" id="marital">
+                        <option selected disabled hidden>Marital Status</option>
+                        <option value="option1">Married</option>
+                        <option value="option2">Unmarried</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Email</label><br>
+                    <input type="text" name="email" id="Email" placeholder="Email"
+                        class="form-control border border-dark">
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Date of Birth</label><br>
+                    <input type="date" id="timing" placeholder="MM/DD/YY" class="form-control border border-dark">
+                </div>
+            </div>
+            <!-- sixth row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-6">
+                    <label class="form-label">Address</label><br>
+                    <input type="text" name="address" id="Address" placeholder="Address"
+                        class="form-control border border-dark">
+                </div>
+
+                <div class="col-4">
+                    <label class="form-label">Home Phone</label><br>
+                    <div class="input-group mb-3 w-100">
+                        <span class="input-group-text w-10" id="basic-addon1"><select class="w-80" id="statee">
+                                <option value="1" selected="selected">+91</option>
+                                <option value="1">+81 </option>
+                                <option value="2">+78</option>
+                                <option value="3">+63</option>
+                                <option value="4">+112</option>
+                            </select></span>
+                        <input type="number" name="homephone" id="Homephone" class="form-control border border-dark">
+                    </div>
+                </div>
+
+            </div>
+            <!-- seventh row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-6">
+                    <label class="form-label">Apt/Unit/Suite</label><br>
+                    <input type="text" name="apt" id="Apt" placeholder="Apt/Unit/Suite"
+                        class="form-control border border-dark">
+                </div>
+
+                <div class="col-4">
+                    <label class="form-label">Work Phone</label><br>
+                    <div class="input-group mb-3 w-100">
+                        <span class="input-group-text w-10" id="basic-addon1"><select class="w-80" id="statee1">
+                                <option value="1" selected="selected">+91</option>
+                                <option value="1">+81 </option>
+                                <option value="2">+78</option>
+                                <option value="3">+63</option>
+                                <option value="4">+112</option>
+                            </select></span>
+                        <input type="number" name="workphone" id="Workphone" class="form-control border border-dark">
+                    </div>
+                </div>
+
+            </div>
+            <!-- eighth row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-3">
+                    <label class="form-label">Zip</label><br>
+                    <input type="number" name="zip" id="Zip" placeholder="zip" class="form-control border border-dark">
+                </div>
+                <div class="col-3">
+                    <label class="form-label">City</label><br>
+                    <input type="text" name="city" id="City" placeholder="City" class="form-control border border-dark">
+                </div>
+
+                <div class="col-4">
+                    <label class="form-label">Cell Phone</label><br>
+                    <div class="input-group mb-3 w-100">
+                        <span class="input-group-text w-10" id="basic-addon1"><select class="w-80" id="statee3">
+                                <option value="1" selected="selected">+91</option>
+                                <option value="1">+81 </option>
+                                <option value="2">+78</option>
+                                <option value="3">+63</option>
+                                <option value="4">+112</option>
+                            </select></span>
+                        <input type="number" name="cellphone" id="Cellphone" class="form-control border border-dark">
+                    </div>
+                    <!-- <input type="number" name="cellphone" id="Cellphone" class="form-control border border-dark"> -->
+                </div>
+
+            </div>
+            <!-- nineth row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-3">
+                    <label class="form-label">State</label><br>
+                    <div class="border border-dark rounded">
+                        <select id="statefilter">
+                            <option selected disabled hidden>State</option>
+                            <option value="1">Tamilnadu</option>
+                            <option value="2">Karnataka</option>
+                            <option value="3">Andhra pradesh</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Country</label><br>
+
+                    <!-- <select class="selectpicker countrypicker" data-flag="true" id="flag"></select> -->
+                    <div class="border border-dark rounded">
+                        <select id="countryfilter">
+                            <option selected disabled hidden>Select country</option>
+                            <!-- <option selected disabled>Country</option>
+                            <option value="1">India</option>
+                            <option value="2">Austraila</option>
+                            <option value="2">America</option> -->
+                        </select>
+                    </div>
+                </div>
+                <div class="col-3 mt-5">
+                    <input type="checkbox" id="Confidential">&nbsp<label for="Confidential">Confidential
+                        Indicator</label>
+                </div>
+                <div class="col-3 mt-5">
+                    <input type="checkbox" id="Vip">&nbsp<label for="vip">VIP Indicator</label>
+                </div>
+            </div>
+            <!-- tenth row -->
+            <div class="row mt-2 ml-2 mr-2">
+                <div class="col-6">
+                    <label class="form-label">How did you hear about us?</label><br>
+                    <div class="border border-dark rounded">
+                        <select id="howknowaboutus" multiple>
+
+                            <option value="1">Facebook</option>
+                            <option value="2">Youtube</option>
+                            <option value="3">other</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-3 mt-5">
+                    <input type="checkbox" id="Guarantor">&nbsp<label for="guarantor">Patient is Guarantor</label>
+                </div>
+                <div class="col-3 mt-5">
+                    <input type="checkbox" id="Subscriber">&nbsp<label for="subscriber">Patient is Subscriber</label>
+                </div>
+            </div>
+            <!-- last row -->
+            <div class="row mt-2 ml-2 mr-2 mb-3">
+                <div class="col-3">
+                    <input type="checkbox" id="Patient">
+                    <label for="checkbox">Patient agreed to contact via</label>
+                </div>
+                <div class="col-3">
+                    <input type="checkbox" id="sms">&nbsp;<label for="sms">SMS</label>&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="mail">&nbsp;<label for="mail">Email</label>
+                </div>
+            </div>
+            <!-- buttons -->
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6 text-start">
+                        <button type="submit" class="btn btn-danger " onclick=" myClear()">Clear</button>
+                    </div>
+                    <div class="col-6 text-end">
+                        <button type="submit" class="btn btn-primary " onclick="validation()">Register</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    var arr = ["Location", "Department", "fasttrack", "License", "Accountnumber", "Mrn", "Security", "Firstname", "Initial", "example-multiple-race", "Lastname", "example-multiple-ethnicity", "gender", "marital", "Email", "timing", "Address", "statee", "Homephone", "Apt", "statee1", "Workphone", "Zip", "City", "statee3", "Cellphone", "statefilter", "countryfilter", "Confidential", "Vip", "howknowaboutus", "Guarantor", "Subscriber", "Patient", "sms", "mail"];
+    function myClear() {
+        for (var i = 0; i < arr.length; i++) {
+            if (document.getElementById(arr[i]).checked == true) {
+                document.getElementById(arr[i]).checked = false;
+            }
+            document.getElementById(arr[i]).value = "";
+        }
+
+    }
+// function validation(){
+//     var location = document.getElementById("Location").value.trim();
+//     if (location == "") {
+//         document.getElementById("demo1").innerHTML = "Please enter location";
+//         document.getElementById("demo1").style.visibility = "visible";
+//         document.getElementById("demo1").style.color = "red";
+//     }
+//     var department = document.getElementById("Department").value.trim();
+//     if (location == "") {
+//         document.getElementById("demo2").innerHTML = "Please enter Department";
+//         document.getElementById("demo2").style.visibility = "visible";
+//         document.getElementById("demo2").style.color = "red";
+//     }
+// }
+    // Dynamic dropdown 
+    const option_array = ['India', 'Pakistan', 'Afghanistan', 'Bangladesh'];
+    const putvalue = document.querySelector("#countryfilter");
+
+    option_array.forEach((option, index) => {
+        putvalue.innerHTML += "<option value=" + index + ">" + option + "</option>";
+    });
+
+    $(document).ready(function () {
+        $('#example-multiple-race').multiselect({
+            buttonWidth: '100%',
+            nonSelectedText: 'Select Race'
+        });
+        $('#example-multiple-ethnicity').multiselect({
+            enableFiltering: true,
+            buttonWidth: '100%',
+            nonSelectedText: 'Select Ethnicity'
+        });
+        $('#fasttrack').multiselect({
+            buttonWidth: '100%',
+            nonSelectedText: 'Select'
+        });
+        $('#howknowaboutus').multiselect({
+            buttonWidth: '100%',
+            nonSelectedText: 'Select',
+            includeSelectAllOption: true,
+            allSelectedText: 'All option are selected'
+        });
+        $('#statefilter').multiselect({
+            buttonWidth: '100%',
+            enableFiltering: true,
+            nonSelectedText: 'State'
+        });
+        $('#countryfilter').multiselect({
+            buttonWidth: '100%',
+            enableFiltering: true,
+        });
+
+
+    });
+
+
+</script>
+
+</html>
