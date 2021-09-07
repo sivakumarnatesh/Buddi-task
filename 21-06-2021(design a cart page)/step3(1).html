@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form validation step3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="bg">
+    <div class="container">
+        <div class="form-wrap card shadow-lg p-3 mb-5 bg-body rounded">
+            <div style="display: flex;" class="col">
+                <div onclick="gostep1()">
+                    <span class="circle"><i class="fa fa-apple same"
+                            style="font-size:48px;color:green;margin-left: 20px;margin-top: 10px;"></i></span>
+                    <p style="margin-left: 10px;">STEP 01</p>
+                </div>
+                <div onclick="gostep2()">
+                    <span class="circle" style="margin-left: 50px;"><i class="fa fa-lock same"
+                            style="font-size:48px;color:green;margin-left: 23px;margin-top: 10px;"
+                            aria-hidden="true"></i></span>
+                    <p style="margin-left: 60px;">STEP 02</p>
+                </div>
+                <div>
+                    <span class="circle" style="margin-left: 50px;"><i class="fa fa-shopping-cart same"
+                            style="font-size:48px;color:green;margin-left: 16px;margin-top: 10px;"
+                            aria-hidden="true"></i></span>
+                    <p style="margin-left: 60px;">STEP 03</p>
+                </div>
+                <div onclick="gostep4()">
+                    <span class="circle" style="margin-left: 50px;"> <i class="fa fa-truck same"
+                            style="font-size:48px;color:green;margin-left: 16px;margin-top: 10px;"></i></span>
+                    <p style="margin-left: 60px;">STEP 04</p>
+                </div>
+            </div>
+            <header style="margin-top: 20px;">
+                <h4>MY CART</h4>
+            </header>
+            <div style="display: flex;margin-left: 30%;margin-top: 20px;">
+                <p>Product Detail</p>
+                <p style="margin-left: 12%;">Quantity</p>
+                <p style="margin-left: 10%;">Total Price</p>
+            </div>
+            <div style="display: flex;margin-left: 28%;margin-top: 10px;">
+                <img src="assets/cherry.PNG" alt="fruit">
+                <div>
+                    <p>Cherry</p>
+                    <p> $<span id="cherryitem">35</span></p>
+                </div>
+                <div class="number" style="margin-left:8%">
+                    <span class="minus" onclick="decrementValue('cherrycount','total','cherryitem')" class="pointer">-</span>
+                    <input type="text" value="1" id="cherrycount" style="width: 50px;" />
+                    <span class="plus" onclick="incrementValue('cherrycount','total','cherryitem')" class="pointer">+</span>
+                </div>
+                <div style="display: flex;margin-left: 10%;">
+                    <p>$<span id="total">35</span></p>
+                    <button type="button" class="btn-close" aria-label="Close" style="margin-left: 30px;"></button>
+                </div>
+
+            </div><br>
+            <div style="display: flex;margin-left: 28%;">
+                <img src="assets/mango.PNG" alt="fruit">
+                <div>
+                    <p>Mango</p>
+                    <p>$<span id="mangoitem">20</span></p>
+                </div>
+                <div class="number" style="margin-left:8%">
+                    <span class="minus" onclick="decrementValue('mangocount','total1','mangoitem')" class="pointer">-</span>
+                    <input type="text" value="1" id="mangocount" style="width: 50px;" />
+                    <span class="plus" onclick="incrementValue('mangocount','total1','mangoitem')" class="pointer">+</span>
+                </div>
+                <div style="display: flex;margin-left: 10%;">
+                    <p>$<span id="total1">20</span></p>
+                    <button type="button" class="btn-close" aria-label="Close" style="margin-left: 30px;"></button>
+                </div>
+
+            </div>
+            <div style="display: flex;margin-left: 30%;margin-bottom: 3%;">
+                <button type="button" class="btn btn-success" style="margin-top:20px;width: 10%;"
+                    onclick="goback()">Back</button>
+                <button type="button" class="btn btn-success" style="margin-top:20px;margin-left: 30%;"
+                    onclick="confirm()">Continue</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="assets/jquery.js"></script>
+<script>
+    function gostep1() {
+        window.location.replace("step1.html");
+    }
+    function gostep2() {
+        window.location.replace("step2.html");
+    }
+    function gostep4() {
+        window.location.replace("step4.html");
+    }
+    function confirm() {
+        var cherry = parseInt(document.getElementById('total').innerHTML);
+        var mango = parseInt(document.getElementById('total1').innerHTML);
+        var total = cherry+mango;
+        console.log(total)
+        sessionStorage.setItem('TotalPrice',total);
+        window.location.replace("step4.html");
+    }
+    function goback() {
+        window.location.replace("step2.html");
+    }
+
+
+    function incrementValue(id,displayfield,itemcost)
+{
+    var itemcost = parseInt(document.getElementById(itemcost).innerHTML);
+    var value = parseInt(document.getElementById(id).value, 10); //document.getelementbyid('mangoitem')
+    value = isNaN(value) ? 0 : value;
+    if(value<10){ //to mention that user cannot buy 10 item
+        value++;
+            document.getElementById(id).value = value;
+    }
+    var multipliedValue = itemcost*value;
+    document.getElementById(displayfield).innerHTML = multipliedValue;
+}
+function decrementValue(id,displayfield,itemcost)
+{
+    var itemcost = parseInt(document.getElementById(itemcost).innerHTML);
+    var value = parseInt(document.getElementById(id).value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value>1){
+        value--;
+            document.getElementById(id).value = value;
+    }
+    var multipliedValue = itemcost*value;
+    document.getElementById(displayfield).innerHTML = multipliedValue;
+}
+
+
+</script>
+
+</html>

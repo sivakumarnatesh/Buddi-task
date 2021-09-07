@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form validation step1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="bg">
+    <div class="container">
+        <div class="form-wrap card shadow-lg p-3 mb-5 bg-body rounded">
+            <div style="display: flex;" class="col">
+                <div>
+                    <span class="circle"><i class="fa fa-apple same"
+                            style="font-size:48px;color:green;margin-left: 20px;margin-top: 10px;"></i></span>
+                    <p style="margin-left: 10px;">STEP 01</p>
+                </div>
+                <div onclick="gostep2()">
+                    <span class="circle" style="margin-left: 50px;"><i class="fa fa-lock same"
+                            style="font-size:48px;color:green;margin-left: 23px;margin-top: 10px;"
+                            aria-hidden="true"></i></span>
+                    <p style="margin-left: 60px;">STEP 02</p>
+                </div>
+                <div onclick="gostep3()">
+                    <span class="circle" style="margin-left: 50px;"><i class="fa fa-shopping-cart same"
+                            style="font-size:48px;color:green;margin-left: 16px;margin-top: 10px;"
+                            aria-hidden="true"></i></span>
+                    <p style="margin-left: 60px;">STEP 03</p>
+                </div>
+                <div onclick="gostep4()">
+                    <span class="circle" style="margin-left: 50px;"> <i class="fa fa-truck same"
+                            style="font-size:48px;color:green;margin-left: 16px;margin-top: 10px;"></i></span>
+                    <p style="margin-left: 60px;">STEP 04</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <header style="margin-top: 20px;">
+                <h4>BASIC DETAILS</h4>
+            </header>
+            <div style="display: flex;margin-left:25%;margin-top: 20px;margin-bottom: 3%;">
+                <div class="four-row">
+                    <div class="form-group">
+                        <input type="text" id="firstname" placeholder="First Name"
+                            class="form-control border border-dark" />
+                        <div id="demo1"></div>
+                    </div>
+                    <div class="form-group" style="margin-top:20px;">
+                        <input type="text" id="mailid" placeholder="Email ID" class="form-control border border-dark" />
+                        <div id="demo2"></div>
+                    </div>
+                    <div class="form-group" style="margin-top:20px;">
+                        <input type="text" id="country" placeholder="Country" class="form-control border border-dark" />
+                        <div id="demo3"></div>
+                    </div>
+                    <div class="form-group" style="margin-top:20px;">
+                        <input type="number" id="phonenumber" placeholder="Phone Number"
+                            class="form-control border border-dark" />
+                        <div id="demo4"></div>
+                    </div>
+                    <div style="margin-top:50px;">
+                        <button type="button" class="btn btn-success" style="width:45%;">Back</button>
+                    </div>
+                </div>
+                <div class="four-row" style="margin-left: 20px;">
+                    <div class="form-group">
+                        <input type="text" id="lastname" placeholder="Last Name"
+                            class="form-control border border-dark" />
+                        <div id="demo5"></div>
+                    </div>
+                    <div class="form-group" style="margin-top:20px;">
+                        <input type="text" id="userid" placeholder="Your User ID"
+                            class="form-control border border-dark" />
+                        <div id="demo6"></div>
+                    </div>
+                    <div class="form-group" style="margin-top:20px;">
+                        <div style="display: flex;">
+                            <div>
+                                <input type="text" id="state" placeholder="State"
+                                    class="form-control border border-dark" />
+                                <div id="demo7"></div>
+                            </div>
+                            <div>
+                                <input type="text" id="city" placeholder="City" class="form-control border border-dark"
+                                    style="margin-left:10px" />
+                                <div id="demo8"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top:20px;">
+                        <input type="number" id="refcode" placeholder="Reference Coder"
+                            class="form-control border border-dark" />
+                        <div id="demo9"></div>
+                    </div>
+                    <div style="float: right;margin-top:50px;">
+                        <button type="button" class="btn btn-success" onclick="validation()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/jquery.js"></script>
+<script>
+    function gostep2() {
+        window.location.replace("step2.html");
+    }
+    function gostep3() {
+        window.location.replace("step3.html");
+    }
+    function gostep4() {
+        window.location.replace("step4.html");
+    }
+
+    var validcount = 0;
+    function validation() {
+        var Firstname = document.getElementById('firstname').value.trim();
+        if (Firstname == "" || !Firstname.match(/[^0-9]/g)) {
+            document.getElementById("demo1").innerHTML = "InValid";
+            document.getElementById("demo1").style.visibility = "visible";
+            document.getElementById("demo1").style.color = "red";
+        }
+        else {
+            document.getElementById("demo1").innerHTML = "";
+            validcount += 1;
+        }
+        var Emailid = document.getElementById('mailid').value.trim();
+        if (!Emailid.match(/^([a-z0-9]+)@([a-zA-Z]+).([a-z]{2,8})$/) || Emailid == "") {
+            document.getElementById("demo2").innerHTML = "InValid";
+            document.getElementById("demo2").style.visibility = "visible";
+            document.getElementById("demo2").style.color = "red";
+        }
+        else {
+            document.getElementById("demo2").innerHTML = "";
+            validcount += 1;
+        }
+        var Country = document.getElementById('country').value.trim();
+        if (Country == "" || !Country.match(/[^0-9]/g)) {
+            document.getElementById("demo3").innerHTML = "InValid";
+            document.getElementById("demo3").style.visibility = "visible";
+            document.getElementById("demo3").style.color = "red";
+        }
+        else {
+            document.getElementById("demo3").innerHTML = "";
+            validcount += 1;
+        }
+        var Phonenumber = document.getElementById('phonenumber').value.trim();
+        if (Phonenumber == "" || Phonenumber.length != 10) {
+            document.getElementById("demo4").innerHTML = "InValid";
+            document.getElementById("demo4").style.visibility = "visible";
+            document.getElementById("demo4").style.color = "red";
+        }
+        else {
+            document.getElementById("demo4").innerHTML = "";
+            validcount += 1;
+        }
+        var Lastname = document.getElementById('lastname').value.trim();
+        if (Lastname == "" || !Lastname.match(/[^0-9]/g)) {
+            document.getElementById("demo5").innerHTML = "InValid";
+            document.getElementById("demo5").style.visibility = "visible";
+            document.getElementById("demo5").style.color = "red";
+        }
+        else {
+            document.getElementById("demo5").innerHTML = "";
+            validcount += 1;
+        }
+        var Userid = document.getElementById('userid').value.trim();
+        if (Userid == "" || Userid.length > 8) {
+            document.getElementById("demo6").innerHTML = "InValid";
+            document.getElementById("demo6").style.visibility = "visible";
+            document.getElementById("demo6").style.color = "red";
+        }
+        else {
+            document.getElementById("demo6").innerHTML = "";
+            validcount += 1;
+        }
+        var State = document.getElementById('state').value.trim();
+        if (State == "" || !State.match(/[^0-9]/g)) {
+            document.getElementById("demo7").innerHTML = "InValid";
+            document.getElementById("demo7").style.visibility = "visible";
+            document.getElementById("demo7").style.color = "red";
+        }
+        else {
+            document.getElementById("demo7").innerHTML = "";
+            validcount += 1;
+        }
+        var City = document.getElementById('city').value.trim();
+        if (City == "" || !City.match(/[^0-9]/g)) {
+            document.getElementById("demo8").innerHTML = "InValid";
+            document.getElementById("demo8").style.visibility = "visible";
+            document.getElementById("demo8").style.color = "red";
+        }
+        else {
+            document.getElementById("demo8").innerHTML = "";
+            validcount += 1;
+        }
+        var Reference = document.getElementById('refcode').value.trim();
+        if (Reference == "") {
+            document.getElementById("demo9").innerHTML = "InValid";
+            document.getElementById("demo9").style.visibility = "visible";
+            document.getElementById("demo9").style.color = "red";
+        }
+        else {
+            document.getElementById("demo9").innerHTML = "";
+            validcount += 1;
+        }
+        if (validcount == 9) {
+            window.location.replace("step2.html");
+        }
+    }
+</script>
+
+</html>

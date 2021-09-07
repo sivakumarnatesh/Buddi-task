@@ -1,0 +1,27 @@
+.bg{
+    background-image: url('assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h4{
+    
+    text-align: center;
+}
+.circle{
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+    display: inline-block;
+    background:rgb(115, 240, 115);
+}
+.container{
+    margin-top: 6%;
+    
+}
+.col{
+    margin-left: 30%;
+    margin-top: 5%;
+}
+.pointer{
+    cursor: pointer;
+}

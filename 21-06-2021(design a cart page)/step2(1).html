@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form validation step2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="bg">
+    <div class="container">
+        <div class="form-wrap card shadow-lg p-3 mb-5 bg-body rounded">
+            <div style="display: flex;" class="col">
+                <div onclick="gostep1()">
+                    <span class="circle"><i class="fa fa-apple same"
+                            style="font-size:48px;color:green;margin-left: 20px;margin-top: 10px;"></i></span>
+                    <p style="margin-left: 10px;">STEP 01</p>
+                </div>
+                <div>
+                    <span class="circle" style="margin-left: 50px;"><i class="fa fa-lock same"
+                            style="font-size:48px;color:green;margin-left: 23px;margin-top: 10px;"
+                            aria-hidden="true"></i></span>
+                    <p style="margin-left: 60px;">STEP 02</p>
+                </div>
+                <div onclick="gostep3()">
+                    <span class="circle" style="margin-left: 50px;"><i class="fa fa-shopping-cart same"
+                            style="font-size:48px;color:green;margin-left: 16px;margin-top: 10px;"
+                            aria-hidden="true"></i></span>
+                    <p style="margin-left: 60px;">STEP 03</p>
+                </div>
+                <div onclick="gostep4()">
+                    <span class="circle" style="margin-left: 50px;"> <i class="fa fa-truck same"
+                            style="font-size:48px;color:green;margin-left: 16px;margin-top: 10px;"></i></span>
+                    <p style="margin-left: 60px;">STEP 04</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <header style="margin-top: 20px;">
+                <h4>PASSWORD CHANGE</h4>
+            </header>
+            <div style="display: flex;margin-left:25%;margin-top: 20px;margin-bottom: 3%;">
+                <div class="row">
+                    <div class="form-group">
+                        <input type="password" id="oldpassword" placeholder="Current Password"
+                            class="form-control border border-dark" />
+                        <div id="demo1"></div>
+                    </div>
+                    <button type="button" class="btn btn-success" style="margin-top:20px;width: 50%;margin-left: 5%;"
+                        onclick="goback()">Back</button>
+                </div>
+                <div class="row" style="margin-left: 20px;">
+                    <div class="form-group">
+                        <input type="password" id="newpassword" placeholder="New Password"
+                            class="form-control border border-dark" />
+                        <div id="demo2"></div>
+                    </div>
+                    <button type="button" class="btn btn-success" style="margin-top:20px;width: 50%;margin-left: 45%;"
+                        onclick="passwordchange()">Continue</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="assets/jquery.js"></script>
+<script>
+    function gostep1() {
+        window.location.replace("step1.html");
+    }
+    function gostep3() {
+        window.location.replace("step3.html");
+    }
+    function gostep4() {
+        window.location.replace("step4.html");
+    }
+    var count = 0;
+    function passwordchange() {
+        var password = document.getElementById('oldpassword').value.trim();
+        if (!password.match(/[a-z]/g) || !password.match(/[A-Z]/g) || !password.match(/[0-9]/g) || !password.match(/[^a-zA-Z\d]/g) && password == "") {
+            document.getElementById("demo1").innerHTML = "InValid";
+            document.getElementById("demo1").style.visibility = "visible";
+            document.getElementById("demo1").style.color = "red";
+        }
+        else {
+            document.getElementById("demo1").innerHTML = "";
+            count += 1;
+        }
+        var Newpassword = document.getElementById('newpassword').value.trim();
+        if (password == Newpassword || !Newpassword.match(/[a-z]/g) || !Newpassword.match(/[A-Z]/g) || !Newpassword.match(/[0-9]/g) || !Newpassword.match(/[^a-zA-Z\d]/g) && Newpassword == "") {
+            document.getElementById("demo2").innerHTML = "InValid";
+            document.getElementById("demo2").style.visibility = "visible";
+            document.getElementById("demo2").style.color = "red";
+        }
+        else {
+            document.getElementById("demo2").innerHTML = "";
+            count += 1;
+        }
+        if (count == 2) {
+            window.location.replace("step3.html");
+        }
+    }
+    function goback() {
+        window.location.replace("step1.html");
+    }
+</script>
+
+</html>

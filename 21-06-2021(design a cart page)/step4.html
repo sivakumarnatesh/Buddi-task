@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form validation step4</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="bg">
+    <div class="container">
+        <div class="form-wrap card shadow-lg p-3 mb-5 bg-body rounded">
+            <div style="display: flex;" class="col">
+                <div onclick="gostep1()">
+                    <span class="circle"><i class="fa fa-apple same"
+                            style="font-size:48px;color:green;margin-left: 20px;margin-top: 10px;"></i></span>
+                    <p style="margin-left: 10px;">STEP 01</p>
+                </div>
+                <div onclick="gostep2()">
+                    <span class="circle" style="margin-left: 50px;"><i class="fa fa-lock same"
+                            style="font-size:48px;color:green;margin-left: 23px;margin-top: 10px;"
+                            aria-hidden="true"></i></span>
+                    <p style="margin-left: 60px;">STEP 02</p>
+                </div>
+                <div onclick="gostep3()">
+                    <span class="circle" style="margin-left: 50px;"><i class="fa fa-shopping-cart same"
+                            style="font-size:48px;color:green;margin-left: 16px;margin-top: 10px;"
+                            aria-hidden="true"></i></span>
+                    <p style="margin-left: 60px;">STEP 03</p>
+                </div>
+                <div>
+                    <span class="circle" style="margin-left: 50px;"> <i class="fa fa-truck same"
+                            style="font-size:48px;color:green;margin-left: 16px;margin-top: 10px;"></i></span>
+                    <p style="margin-left: 60px;">STEP 04</p>
+                </div>
+            </div>
+            <header style="margin-top: 20px;">
+                <h4>CART TOTALS</h4>
+            </header>
+            <div style="display: flex;margin-left: 30%;margin-top: 20px;">
+                <div>
+                    <p>Subtotal</p>
+                    <p>Shipping</p><br><br>
+                    <p>Service (estimated for vietnam)</p>
+                    <p>Total</p>
+                </div>
+                <div style="margin-left: 20%;">
+                    <p>$110</p>
+
+                    <input type="radio" id="freeshipping" name="test" value="free" checked>
+                    <label for="free">Free Shipping</label><br>
+                    <input type="radio" id="localshipping" name="test" value="cost">
+                    <label for="cost">Local Pickup:$5</label><br>
+                    <p>Calculate Shipping</p>
+                    <p>$5.60</p>
+                    <p>$64.69</p>
+                </div>
+
+            </div>
+            <button type="button" class="btn btn-success"
+                style="margin-top:20px;width: 25%;margin-left: 35%;margin-bottom: 3%;">PROCEED
+                TO CHECKOUT</button>
+
+        </div>
+    </div>
+    </div>
+</body>
+<script src="assets/jquery.js"></script>
+<script>
+    function gostep1() {
+        window.location.replace("step1.html");
+    }
+    function gostep2() {
+        window.location.replace("step2.html");
+    }
+    function gostep3() {
+        window.location.replace("step3.html");
+    }
+</script>
+
+</html>
