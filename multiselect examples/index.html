@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiselect examples</title>
+    <!-- bootstrap@4.6.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- bootstrap.bundle.min.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- bootstrap-multiselect.css -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css">
+    <!-- bootstrap-multiselect.js -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+</head>
+<style>
+    .btn-default {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dropdown-toggle::after {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    #example-optionClass-container .multiselect-container .odd:not(.active) {
+        background: #eeeeee;
+    }
+
+    #example-selectedClass-container .multiselect-selected .form-check-label {
+        color: red;
+    }
+</style>
+
+<body>
+    <header>
+        <h4 class="text-center mt-2">MULTISELECT EXAMPLES</h4>
+    </header>
+    <div class="row">
+        <div class="col-12 mt-5 ">
+
+            <select id="example-multiple-selected" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2" selected="selected">Option 2</option>
+                <!-- Option 3 will be selected in advance ... -->
+                <option value="3" selected="selected">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+            </select>
+
+
+            <select id="example-xss" multiple="multiple">
+                <option value="1">&lt;script&gt;alert(1);&lt;/script&gt;</option>
+            </select>
+
+            <select id="example-single">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+            </select>
+
+            <select id="example-enableClickableOptGroups-onChange" multiple="multiple">
+                <optgroup label="Group 1">
+                    <option value="1-1">Option 1.1</option>
+                    <option value="1-2" selected="selected">Option 1.2</option>
+                    <option value="1-3" selected="selected">Option 1.3</option>
+                </optgroup>
+                <optgroup label="Group 2">
+                    <option value="2-1">Option 2.1</option>
+                    <option value="2-2">Option 2.2</option>
+                    <option value="2-3">Option 2.3</option>
+                </optgroup>
+            </select>
+            <!-- <select id="enableCollapsibleOptGroups" multiple="multiple">
+                <optgroup label="Group 1">
+                    <option value="1-1">Option 1.1</option>
+                    <option value="1-2" selected="selected">Option 1.2</option>
+                    <option value="1-3" selected="selected">Option 1.3</option>
+                </optgroup>
+                <optgroup label="Group 2">
+                    <option value="2-1">Option 2.1</option>
+                    <option value="2-2">Option 2.2</option>
+                    <option value="2-3">Option 2.3</option>
+                </optgroup>
+            </select> -->
+            <select id="example-disableIfEmpty"> </select>
+            <select id="example-dropUp" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+            </select>
+            <select id="example-onInitialized" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <button id="example-onInitialized-button" class="btn btn-primary">Activate</button>
+            <select id="example-onDropdownShowandhide" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <select id="example-onDropdownShownandhidden" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+
+
+        </div>
+        <div class="col-12 mt-5 ml-2">
+            <select id="example-buttonClass" class="bg-warning" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <select id="example-buttonContainer" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <select id="example-buttonText" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+            </select>
+            <select id="example-buttonTitle" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+            </select>
+            <select id="example-optionLabel" multiple="multiple">
+                <option value="Option1">Option1</option>
+                <option value="Option2">Option2</option>
+                <option value="Option3">Option3</option>
+                <option value="Option4">Option4</option>
+                <option value="Option5">Option5</option>
+                <option value="Option6">Option6</option>
+            </select>
+            <select id="example-filterBehavior" multiple="multiple">
+                <option value="a">Option 1</option>
+                <option value="b">Option 2</option>
+                <option value="c">Option 3</option>
+                <option value="d">Option 4</option>
+                <option value="e">Option 5</option>
+                <option value="f">Option 6</option>
+            </select>
+            <select id="example-include-reset" multiple="multiple">
+                <option value="a">Option 1</option>
+                <option value="b">Option 2</option>
+                <option value="c">Option 3</option>
+                <option value="d">Option 4</option>
+                <option value="e">Option 5</option>
+                <option value="f">Option 6</option>
+            </select>
+
+            <div id="example-optionClass-container" class="mt-5 ml-2">
+                <select id="example-optionClass" multiple="multiple">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                    <option value="5">Option 5</option>
+                    <option value="6">Option 6</option>
+                </select>
+                <select id="example-onSelectAll" multiple="multiple">
+                    <option value="a">Option 1</option>
+                    <option value="b">Option 2</option>
+                    <option value="c">Option 3</option>
+                    <option value="d">Option 4</option>
+                    <option value="e">Option 5</option>
+                    <option value="f">Option 6</option>
+                </select>
+            </div>
+
+            <!-- <div class="mb-2 ml-2">
+                <label class="text-danger">never</label><br>
+
+                <select id="example-widthSynchronizationModeNever1" multiple="multiple">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Long Long Long Long Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+                <select id="example-widthSynchronizationModeNever2" multiple="multiple">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+                <br>
+                <label class="text-danger">always</label><br>
+
+                <select id="example-widthSynchronizationModeAlways1" multiple="multiple">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Long Long Long Long Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+                <select id="example-widthSynchronizationModeAlways2" multiple="multiple">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+                <br>
+                <label class="text-danger">ifPopupIsSmaller</label><br>
+
+                <select id="example-widthSynchronizationModeIfSmaller1" multiple="multiple">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Long Long Long Long Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+                <select id="example-widthSynchronizationModeIfSmaller2" multiple="multiple">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+
+                <br>
+                <label class="text-danger">ifPopupIsWider</label><br>
+
+                <select id="example-widthSynchronizationModeIfWider1" multiple="multiple">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Long Long Long Long Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+                <select id="example-widthSynchronizationModeIfWider2" multiple="multiple">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+
+            </div> -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Prepend</span>
+                </div>
+                <select id="example-input-group" multiple="multiple">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                    <option value="5">Option 5</option>
+                    <option value="6">Option 6</option>
+                </select>
+                <div class="input-group-append">
+                    <span class="input-group-text">Append</span>
+                </div>
+            </div>
+
+            <div class="input-group input-group-sm mt-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Prepend</span>
+                </div>
+                <select id="example-input-group-sm" multiple="multiple">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                    <option value="5">Option 5</option>
+                    <option value="6">Option 6</option>
+                </select>
+                <div class="input-group-append">
+                    <span class="input-group-text">Append</span>
+                </div>
+            </div>
+            <!--Launch model-->
+            <button class="btn btn-outline-secondary mt-2" data-toggle="modal" data-target="#example-modal-modal">Launch
+                modal</button>
+            <div class="modal fade" id="example-modal-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Bootstrap Multiselect</h5>
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <select id="example-modal" multiple="multiple">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- multiselect in an accordion/collapse -->
+            <div class="accordion" id="example-collapse-accordion">
+                <div class="card" style="overflow:visible;">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" data-toggle="collapse"
+                                data-target="#example-collapse-accordion-one">
+                                Bootstrap Multiselect
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="example-collapse-accordion-one" class="collapse show">
+                        <div class="card-body">
+                            <select id="example-collapse" multiple="multiple">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-default" id="example-select-onChange-button">Select one option</button>
+            <select id="example-select-onChange" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+            </select>
+
+            <select id="example-destroy" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+            </select>
+            <button class="btn-danger" id="example-destroy-button">destroy/unbind</button>
+            <div>
+                <select id="example-deselect" multiple="multiple">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                    <option value="5">Option 5</option>
+                    <option value="6">Option 6</option>
+                </select>
+                <button class="btn-default" id="example-deselect-button">Deselect some options</button>
+            </div>
+
+
+            <select id="dynamic" multiple="multiple"></select>
+
+
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+    var country_list = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua &amp; Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh"];
+    var putvalue = document.querySelector("#dynamic");
+
+    country_list.forEach((option, index) => {
+
+        if (index == 0 || index == 1) {
+            putvalue.innerHTML += '<option value="' + index + '" selected="selected">' + option + '</option>';
+
+        }
+        else {
+            putvalue.innerHTML += "<option value=" + index + ">" + option + "</option>";
+        }
+
+    });
+
+
+
+
+
+    //if options are not selected display text 
+    //if too many options are selected display text
+    //if all option are selected display text and select all label name
+    $(document).ready(function () {
+        var count = 0;
+        var outputString = [];
+        var options = document.getElementById('dynamic').options;
+
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].selected) {
+                count++;
+                outputString.push(options[i].text);
+
+            }
+        }
+       // console.log(outputString);
+
+        $('#dynamic').multiselect({
+            includeSelectAllOption: true,
+            onDropdownShow: function (event) {
+                alert(count + ' options are selected' + outputString);
+            },
+            onDropdownHide: function (event) {
+                alert(count + ' options are selected');
+            },
+            onSelectAll: function () {
+                alert('onSelectAll triggered!');
+            },
+            onDeselectAll: function () {
+                alert('onDeselectAll triggered!');
+            },
+            onChange: function (option, checked) {
+                
+                if (outputString.indexOf(options[0].text) > -1) {
+                    console.log(outputString.includes(options[0].text));
+                    console.log(outputString.indexOf(options[0].text));
+                    var index = outputString.indexOf(options[0].text);
+                    if (index !== -1) {
+                        outputString.splice(index, 1);
+                    }
+                }
+                else {
+                    outputString.push(option[0].text);
+                }
+                if (checked) {
+                    count++;
+                }
+                if (!checked) {
+                    count--;
+                }
+
+
+                alert(count + ' options are selected' + outputString);
+            }
+
+
+        });
+
+        $('#example-multiple-selected').multiselect({
+            nonSelectedText: 'Check an option!',
+            nSelectedText: ' - Too many options selected!',
+            allSelectedText: 'No option left ...',
+            includeSelectAllOption: true,
+            selectAllText: 'Check all!',
+
+        });
+        //enable html
+        $('#example-xss').multiselect({});
+        //enable clickable optgroup
+        $('#example-enableClickableOptGroups-onChange').multiselect({
+            enableClickableOptGroups: true,
+            onChange: function (option, checked) {
+                alert(option.length + ' options ' + (checked ? 'selected' : 'deselected'));
+            },
+            enableFiltering: true,
+            includeSelectAllOption: true,
+            enableCaseInsensitiveFiltering: true,
+            enableFullValueFiltering: true,
+            selectAllNumber: false
+        });
+        // $('#enableCollapsibleOptGroups').multiselect({
+        //     enableCollapsibleOptGroups: true,
+        //     collapseOptGroupsByDefault: true
+        // });
+        //multiselect will be disabled if no options are given and text shown if the multiselect is disabled
+        $('#example-disableIfEmpty').multiselect({
+            disableIfEmpty: true,
+            disabledText: 'Disabled'
+        });
+        //maximum height of the dropdown and dropdown can also be dropped up
+        $('#example-dropUp').multiselect({
+            maxHeight: 400,
+            dropUp: true
+        });
+        // function which is triggered when the multiselect is finished initializing
+        $('#example-onInitialized-button').on('click', function () {
+            $('#example-onInitialized').multiselect({
+                onInitialized: function (select, container) {
+                    alert('Initialized.');
+                }
+            });
+        });
+        //callback called after the dropdown has been shown.
+        $('#example-onDropdownShowandhide').multiselect({
+            onDropdownShow: function (event) {
+                alert('Dropdown shown.');
+            },
+            onDropdownHide: function (event) {
+                alert('Dropdown closed.');
+            }
+        });
+        //callback called after the dropdown has been closed.
+        $('#example-onDropdownShownandhidden').multiselect({
+            onDropdownShown: function (event) {
+                alert('Dropdown closed.');
+            },
+
+            onDropdownHidden: function (event) {
+                alert('Dropdown closed.');
+            }
+        });
+        //Inherit the class of the button from the original select and class of the multiselect button.
+        $('#example-buttonClass').multiselect({
+            buttonClass: 'btn btn-link',
+            inheritClass: true
+        });
+        //container holding both the button as well as the dropdown and width of the multiselect button 
+        $('#example-buttonContainer').multiselect({
+            buttonContainer: '<div class="btn-group" />',
+            buttonWidth: '250px',
+
+        });
+        //button text
+        $('#example-buttonText').multiselect({
+            buttonText: function (options, select) {
+                if (options.length === 0) {
+                    return 'No option selected ...';
+                }
+                else if (options.length > 3) {
+                    return 'More than 3 options selected!';
+                }
+                else {
+                    var labels = [];
+                    options.each(function () {
+                        if ($(this).attr('label') !== undefined) {
+                            labels.push($(this).attr('label'));
+                        }
+                        else {
+                            labels.push($(this).html());
+                        }
+                    });
+                    return labels.join(', ') + '';
+                }
+            }
+        });
+        //button title
+        $('#example-buttonTitle').multiselect({
+            buttonText: function (options, select) {
+                return 'Check the title!';
+            },
+            buttonTitle: function (options, select) {
+                var labels = [];
+                options.each(function () {
+                    labels.push($(this).text());
+                });
+                return labels.join(' - ');
+            }
+        });
+        //callback used to define the labels of the options
+        $('#example-optionLabel').multiselect({
+            optionLabel: function (element) {
+                return $(element).html() + '(' + $(element).val() + ')';
+            },
+            buttonWidth: '250px'
+        });
+        //callback used to define the classes for the li elements containing checkboxes and labels
+        $('#example-optionClass').multiselect({
+            optionClass: function (element) {
+                var value = $(element).val();
+
+                if (value % 2 == 0) {
+                    return 'even';
+                }
+                else {
+                    return 'odd';
+                }
+            }
+        });
+        //behavior can be changed to use the value of the options or both the text and the value
+        $('#example-filterBehavior').multiselect({
+            enableFiltering: true,
+            filterBehavior: 'value',
+            filterPlaceholder: 'Search for something...'
+        });
+        //Add a  reset button and options
+        $('#example-include-reset').multiselect({
+            includeResetOption: true,
+            resetText: "Reset all"
+
+        });
+
+        //Synchronizes the width of the select button and the popup depending on the selected mode
+        // $('#example-widthSynchronizationModeNever1').multiselect({
+        //     buttonWidth: '200px'
+        // });
+        // $('#example-widthSynchronizationModeNever2').multiselect({
+        //     buttonWidth: '200px'
+        // });
+        // $('#example-widthSynchronizationModeAlways1').multiselect({
+        //     widthSynchronizationMode: 'always',
+        //     buttonWidth: '200px'
+        // });
+        // $('#example-widthSynchronizationModeAlways2').multiselect({
+        //     widthSynchronizationMode: 'always',
+        //     buttonWidth: '200px'
+        // });
+        // $('#example-widthSynchronizationModeIfSmaller1').multiselect({
+        //     widthSynchronizationMode: 'ifPopupIsSmaller',
+        //     buttonWidth: '200px'
+        // });
+        // $('#example-widthSynchronizationModeIfSmaller2').multiselect({
+        //     widthSynchronizationMode: 'ifPopupIsSmaller',
+        //     buttonWidth: '200px'
+        // });
+        // $('#example-widthSynchronizationModeIfWider1').multiselect({
+        //     widthSynchronizationMode: 'ifPopupIsWider',
+        //     buttonWidth: '200px'
+        // });
+        // $('#example-widthSynchronizationModeIfWider2').multiselect({
+        //     widthSynchronizationMode: 'ifPopupIsWider',
+        //     buttonWidth: '200px'
+        // });
+        $('#example-onSelectAll').multiselect({
+            includeSelectAllOption: true,
+            onSelectAll: function () {
+                alert('onSelectAll triggered!');
+            },
+            onDeselectAll: function () {
+                alert('onDeselectAll triggered!');
+            },
+
+        });
+        //selected class
+        // $('#example-selectedClass').multiselect({
+        //     buttonContainer: '<div class="btn-group" id="example-selectedClass-container"></div>',
+        //     selectedClass: 'active multiselect-selected'
+        // });
+        //prepand and append
+        $('#example-input-group').multiselect();
+        $('#example-input-group-sm').multiselect();
+        //launch model
+        $('#example-modal').multiselect();
+        //multiselect in an accordion/collapse
+        $('#example-collapse').multiselect();
+        $('#example-select-onChange').multiselect({
+            onChange: function (option, checked, select) {
+                alert('onChange triggered ...');
+            }
+        });
+        //click button and select one option
+        $('#example-select-onChange-button').on('click', function () {
+            $('#example-select-onChange').multiselect('select', '1', true);
+        });
+        //destroy and unbind
+        $('#example-destroy').multiselect();
+        $('#example-destroy-button').on('click', function () {
+            $('#example-destroy').multiselect('destroy');
+        });
+        //Deselect an option by its value. Works also using an array of values.
+        $('#example-deselect').multiselect();
+
+        $('#example-deselect-button').on('click', function () {
+            $('#example-deselect').multiselect('deselect', ['1', '2', '4']);
+
+            alert('Deselected 1, 2 and 4.');
+        });
+        //single selection
+        $('#example-single').multiselect();
+
+    });
+</script>
+
+</html>
