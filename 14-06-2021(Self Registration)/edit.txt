@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+ <!-- toaster js -->
+ <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <title>validationform</title>
+
+  </head>
+  <body class="bg-primary">
+    <form class="container border p-2 bg-light mt-4 rounded shadow-lg text-primary">
+     <h3 class="text-center mt-2">Self Registration-Enter user details</h3>
+            <div class="row g-3 needs-validation" >
+              <!-- User-Id -->
+                <div class="col-md-4">
+                  <label for="User-Id" class="form-label">User-Id</label>
+                  <input type="text" class="form-control" id="User-Id"  required>
+                  <input type="hidden"  id="all-Hidden"  >
+                </div>
+                <!-- password -->
+                <div class="col-md-4">
+                  <label for="Password" class="form-label">Password</label>
+                  <input type="Password" class="form-control"  id="Password"  required>
+                </div>
+                <!-- Confirm-Password -->
+                <div class="col-md-4">
+                  <label for="Confirm-Password" class="form-label">Confirm-Password</label>
+                    <input type="text" class="form-control" id="Confirm-Password"  required>
+                </div>
+                <!-- First-Name -->
+                <div class="col-md-4">
+                  <label for="First-Name" class="form-label">First-Name</label>
+                  <input type="text" class="form-control" id="First-Name" required>
+               </div>
+               <!-- Last-Name -->
+                  <div class="col-md-4">
+                  <label for="Last-Name" class="form-label">Last-Name</label>
+                  <input type="text" class="form-control" id="Last-Name" required>
+                </div>
+                <!-- E-mail -->
+                <div class="col-md-4">
+                  <label for="E-mail" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="E-mail" required>
+                </div>
+                <!-- Company -->
+                <div class="col-md-4">
+                    <label for="Company" class="form-label">Company</label>
+                    <input type="text" class="form-control" id="Company" required>
+                  </div>
+                  <!-- phone-Number -->
+                  <div class="col-md-4">
+                    <label for="phone-Number" class="form-label">phone-Number</label>
+                    <input type="number" class="form-control" id="phone-Number" required>
+                  </div>
+                  <!-- Fax -->
+                  <div class="col-md-4">
+                    <label for="Fax" class="form-label">Fax</label>
+                    <input type="number" class="form-control" id="Fax" required>
+                  </div>
+                  <!-- address -->
+                  <div class="col-md-4">
+                    <label for="address" class="form-label">address</label>
+                    <textarea type="text" class="form-control" id="address" required></textarea>
+                  </div>
+                  <!-- address-2 -->
+                  <div class="col-md-4">
+                    <label for="address-2" class="form-label">address-2</label>
+                    <textarea type="text" class="form-control" id="address-2" required></textarea>
+                  </div>
+                  <!-- city -->
+                  <div class="col-md-4">
+                    <label for="city" class="form-label">city</label>
+                    <input type="text" class="form-control" id="city" required>
+                  </div>
+                  <!-- State/province -->
+                  <div class="col-md-4">
+                    <label for="State" class="form-label">State/province</label>
+                    <input type="text" class="form-control" id="State" required>
+                  </div>
+                  <!-- Zip/Pincode -->
+                  <div class="col-md-4">
+                    <label for="Zip/Pincode" class="form-label">Zip/Pincode</label>
+                    <input type="number" class="form-control" id="Zip/Pincode" required>
+                  </div>
+                  <!-- Comment -->
+                  <div class="col-md-4">
+                    <label for="Comment" class="form-label">Comment</label>
+                    <textarea type="text" class="form-control" id="Comment" required></textarea>
+                  </div>
+               
+                  <!-- checkbox -->
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check" required>
+                    <label class="form-check-label" for="Check">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 d-flex">
+                  
+                  <button class="btn btn-danger " onclick="view()" type="button">show form</button>
+				  <button class="btn btn-primary ms-2" onclick="save()" type="submit">save form</button>
+                </div>
+              </div>
+              </form>
+          
+     
+
+
+<script>
+
+function save()
+            {
+               document.getElementById("all-Hidden").value = JSON.stringify(document.getElementById("User-Id").value);
+               document.getElementById("all-Hidden").value = JSON.stringify(document.getElementById("First-Name").value);
+              
+                document.getElementById("User-Id").value = "";
+                document.getElementById("First-Name").value = "";
+		
+            }
+
+            function view()
+            {
+                document.getElementById("User-Id").value = JSON.parse(document.getElementById("all-Hidden").value);
+                document.getElementById("First-Name").value = JSON.parse(document.getElementById("all-Hidden").value);
+
+                let pairs = {"UserId": JSON.parse(document.getElementById("all-Hidden").value), 
+                             "FirstName": JSON.parse(document.getElementById("all-Hidden").value)
+              };
+    
+                for(let pair in pairs){
+                    document.getElementById("User-Id").value = pair[UserId];
+                    document.getElementById("First-Name").value = pair[FirstName];
+                   
+                }
+            }
+</script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

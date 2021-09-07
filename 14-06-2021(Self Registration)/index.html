@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>self reg form</title>
+
+  <!-- toastr files -->
+  <link rel="stylesheet" href="toastr.min.css">
+  <!-- Bootstrap CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">   -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body style="background-color: rgb(13, 172, 158);">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="toastr.min.js"></script>
+  <div class="container"
+    style="border-style:solid;border-color:blue;margin-top: 5%;background-color: white;border-radius: 20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="row" id="form" class="example">
+      <header>
+        <h3 class="text-center mt-2">Self Registration-Enter user details</h3>
+        <h6 class="text-center" style="color:blue;"> Note: Enter user details and click Register to access the
+          workgroup.
+          UserID,Password,LastName or FirstName,and Email are required fields</h6>
+      </header>
+
+      <div class="col-md-4">
+        <label class="form-label"> UserID:</label><br>
+        <input type="text" name="UserID" id="username" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Password:</label><br>
+        <input type="password" name="Password" id="Password" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Confirm Password:</label><br>
+        <input type="password" name="confirm Password" id="Confirmpassword"
+          class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">FirstName:</label><br>
+        <input type="text" name="FirstName" id="Firstname" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label"> LastName:</label><br>
+        <input type="text" name="LastName" id="Lastname" class="form-control border border-dark same">
+
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label"> EmailID:</label><br>
+        <input type="email" name="Email" id="Email" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label"> Company:</label><br>
+        <input type="text" name=" Company" id="Company" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Phone:</label><br>
+        <input type="text" name="Phone" id="Phonenumber" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Fax:</label><br>
+        <input type="text" name="Fax" id="Faxnumber" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label"> Address1:</label><br>
+        <input type="text" name="Address1" id="Address1" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label"> Address2:</label><br>
+        <input type="text" name="Address2" id="Address2" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label"> City:</label><br>
+        <input type="text" name="City" id="City" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">State/province:</label><br>
+        <input type="text" name="State" id="State" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Zip/pincode:</label><br>
+        <input type="text" name="Zip" id="Zipcode" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label"> Country:</label><br>
+        <input type="text" name="Country" id="Country" class="form-control border border-dark same">
+
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Comment:</label><br>
+        <input type="text" name="Comment" id="Comment" class="form-control border border-dark same">
+        <br>
+      </div>
+      <div class="col-md-4">
+        <label for="gender" class="form-label">Sex</label>
+        <select id="gender" class="form-control border border-dark same">
+          <option value="Gender" selected="selected">Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <br>
+      </div>
+
+      <div class="col-md-4">
+        <br><br>
+        <input type="checkbox" id="sms" class="border border-dark same"><label for="sms"
+          style="margin-left:6px;">SMS</label>
+        <input type="checkbox" id="mail" class="border border-dark same" style="margin-left:40px;"><label for="mail"
+          style="margin-left:6px;">Mail</label>
+        <br>
+      </div>
+
+      <div class="col-md-8" style="margin-top: 5%;margin-bottom: 5%;margin-left: 65%;">
+
+        <button onclick="myClear()" class="btn btn-success">Cancel</button>
+        <button onclick="myRegister()" class="btn btn-success" type="submit" style="margin-left:6%">Register</button>
+        <button onclick="myFetch()" class="btn btn-success" style="margin-left:6%">Fetch</button>
+        <p id="demo"></p>
+      </div>
+      <input type="hidden" value="" id="hide">
+    </div>
+  </div>
+  <script>
+    var space = {}, check;
+    var arr = ["username", "Password", "Confirmpassword", "Firstname", "Lastname", "Email", "Company", "Phonenumber", "Faxnumber", "Address1", "Address2", "City", "State", "Zipcode", "Country", "Comment", "gender", "sms", "mail"];
+
+    function myRegister() {
+      var obj = {};
+      obj["userName"] = document.getElementById("username").value;
+      obj["password"] = document.getElementById("Password").value;
+      obj["confirmpassword"] = document.getElementById("Confirmpassword").value;
+      obj["firstName"] = document.getElementById("Firstname").value;
+      obj["lastName"] = document.getElementById("Lastname").value;
+      obj["email"] = document.getElementById("Email").value;
+      obj["company"] = document.getElementById("Company").value;
+      obj["phoneNumber"] = document.getElementById("Phonenumber").value;
+      obj["faxNumber"] = document.getElementById("Faxnumber").value;
+      obj["address1"] = document.getElementById("Address1").value;
+      obj["address2"] = document.getElementById("Address2").value;
+      obj["city"] = document.getElementById("City").value;
+      obj["state"] = document.getElementById("State").value;
+      obj["zipcode"] = document.getElementById("Zipcode").value;
+      obj["country"] = document.getElementById("Country").value;
+      obj["comment"] = document.getElementById("Comment").value;
+      obj["Gender"] = document.getElementById("gender").value;
+      obj["Sms"] = document.getElementById("sms").checked;
+      obj["Mail"] = document.getElementById("mail").checked;
+      document.getElementById("hide").value = JSON.stringify(obj);
+      console.log(document.getElementById("hide").value);
+      // for (var x in obj) {
+      //   document.getElementById("hide").value += JSON.stringify(obj[x]);
+      // }
+      for (var i = 0; i < arr.length; i++) {
+        if (document.getElementById(arr[i]).checked == true) {
+          document.getElementById(arr[i]).checked = false;
+        }
+        document.getElementById(arr[i]).value = "";
+      }
+    }
+
+    function myFetch() {
+      space = JSON.parse(document.getElementById("hide").value);
+      // var arr1 = Object.entries(space);
+      console.log(space);
+      for (var x in space) {
+        console.log(space[x]);
+        document.getElementsByClassName("same")[0].value = space[x];
+      }
+      // document.getElementById('username').value = space.userName;
+      // document.getElementById('Password').value = space.password;
+      // document.getElementById('Confirmpassword').value = space.confirmpassword;
+      // document.getElementById('Firstname').value = space.firstName;
+      // document.getElementById('Lastname').value = space.lastName;
+      // document.getElementById('Email').value = space.email;
+      // document.getElementById('comp').value = space.company;
+      // document.getElementById('ph').value = space.phoneNumber;
+      // document.getElementById('fa').value = space.faxNumber;
+      // document.getElementById('a1').value = space.address1;
+      // document.getElementById('a2').value = space.address2;
+      // document.getElementById('ci').value = space.city;
+      // document.getElementById('sp').value = space.state;
+      // document.getElementById('zp').value = space.zipcode;
+      // document.getElementById('cou').value = space.country;
+      // document.getElementById('comme').value = space.comment;
+      // document.getElementById('gender').value = space.Gender;
+      // document.getElementById('sms').checked = space.Sms;
+      // document.getElementById('mail').checked = space.Mail;
+    }
+
+  </script>
+
+</body>
+
+</html>
