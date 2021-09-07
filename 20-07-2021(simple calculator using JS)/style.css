@@ -1,0 +1,24 @@
+ #calculatorBody{
+  width: 360px;
+  background: 	#c4ee0b;
+  margin: auto;
+  padding: 5px;
+  border-radius: 10px;
+}
+#answer{
+  width: 225px;
+  display: inline-block;
+  text-align: right;
+  margin: 5px;
+  padding: 10px;
+  background: white;
+}
+input {
+  cursor: pointer;
+  width: 65px;
+  height: 65px;
+  padding: 15px;
+  font-size: 20px;
+  margin: 10px; 
+
+}

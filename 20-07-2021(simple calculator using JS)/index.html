@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>A simple calculator</title>
+</head>
+    <h2 style="margin-left:43%;">CALCULATOR</h2>
+    <div id="calculatorBody"> 
+        <div>  
+			<div id="history"></div>
+			<input>
+            <input type="button" onclick="clearAll()" value="AC"/> <span id="answer">0</span>    
+        </div>
+            <div>
+              <input type="button" onclick="numericButton('1')" value="1"/>
+              <input type="button" onclick="numericButton('2')" value="2"/>
+              <input type="button"  onclick="numericButton('3')" value="3"/>
+              <input type="button" onclick="operatorButton('+')" value="+"/>
+            </div>
+            <div>
+                <input type="button"  onclick="numericButton('4')" value="4"/>
+                <input type="button" onclick="numericButton('5')" value="5"/>
+                <input type="button"  onclick="numericButton('6')" value="6"/>
+                <input type="button" onclick="operatorButton('-')" value="-"/>
+            </div>
+            <div>
+              <input type="button"  onclick="numericButton('7')" value="7"/>
+              <input type="button"  onclick="numericButton('8')" value="8"/>
+              <input type="button"  onclick="numericButton('9')" value="9"/>
+              <input type="button" onclick="operatorButton('*')" value="*"/>
+            </div>
+            <div>
+                <input type="button"  onclick="numericButton('0')" value="0"/>
+                <input type="button" onclick="numericButton('.')" value="."/>
+                <input type="button"  onclick="calculateQueue(queue)" value="="/>
+                <input type="button" onclick="operatorButton('/')" value="/"/>
+            </div>
+        </div>
+    </div>
+</body>
+    <script>
+        //intialize array and input variable
+        var queue = [];
+        var input = 0;
+        //this function used to calculate value
+       
+        function calculateQueue(value){
+		document.getElementById("history").innerHTML = document.getElementById("answer").innerHTML;
+            //console.log(input);
+            if (input !== 0) {
+                input = parseFloat(input);
+                addToQueue(input);
+            }
+            //this answer variable store the starting value of queue
+            var answer = value[0];
+            //console.log(answer)
+            var dividedByZero = 0;
+            for (var i = 2; i < value.length; i= i+2) {
+                switch (queue[i-1]) {
+                    //addition
+                    case '+':
+                        answer+= value[i];
+                        break;
+                     //subtraction
+                    case '-':
+                        answer-= value[i];
+                        break;
+                    //division
+                    case '/':    
+                        if (value[i] === 0){
+                            dividedByZero = 1;
+                        }
+                        else{
+                            answer = answer / value[i];
+                        }
+                        break;
+                    //multiplication
+                    case'*': answer = answer * value[i];
+                        break;
+                }
+
+            }
+            //Convert a number which has fewer decimal places
+            answer = parseFloat(answer);
+            if (dividedByZero === 1) { 
+                clearAll();
+                document.getElementById("answer").innerHTML =  "ERROR";
+            }
+            else
+            {	
+                document.getElementById("answer").innerHTML =  answer;
+                input = answer;
+                queue = [];
+            }
+        }
+        //when addtoqueue function calls the value is pushed into queue array
+        function addToQueue(input){
+            queue.push(input);
+        }
+        //clear the result display field
+        function clearAll() {
+            queue = [];
+            input = 0;
+            document.getElementById("answer").innerHTML = "0";
+        }
+        //this function calls when number button is clicked
+        function numericButton(arg){
+            //console.log(typeof arg)
+            // if the input field contains any error value then make it empty
+            if (document.getElementById("answer").innerHTML ===  "ERROR" || (document.getElementById("answer").innerHTML == "0" && arg != "."))
+            { 
+                document.getElementById("answer").innerHTML = ""; 
+            }
+            //if the field contains valid number then execute this condition
+            if (!(arg === ".") || !input.match(/[.]/)) {
+                input += arg;
+                document.getElementById("answer").innerHTML += arg;
+            }
+            
+        }
+        //this function calls when operator clicks
+        function operatorButton(arg){
+              if (input !== 0 && input !== "-") {
+                  input = parseFloat(input);
+                  //console.log(input);
+                  addToQueue(input);
+                  addToQueue(arg);
+                  document.getElementById("answer").innerHTML +=arg;
+                  input = 0;
+
+              }
+              if (arg == "-"  && isNaN(queue[0]) && input !== "-")
+              {
+                    input ="-";
+                    document.getElementById("answer").innerHTML = "-";
+                }
+                console.log(queue);
+            }
+       
+    </script>
+</html>
