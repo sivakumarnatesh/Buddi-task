@@ -1,0 +1,58 @@
+
+        .navitems {
+            text-decoration: none;
+        }
+
+        .navitems:hover {
+            text-decoration: underline;
+
+        }
+
+        .navtiemhover:hover {
+            background-color: #11537D;
+
+        }
+
+        .hoverpageheadings:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .bannertexthover {
+            color: #8B336C;
+        }
+
+        .bannertexthover:hover {
+            color: black;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .flerbtn {
+            width: 150px;
+            background-color: lightgray;
+        }
+
+        .flerbtn:hover {
+            background-color: white;
+            border: 3px solid gray;
+        }
+
+        .bodybtns {
+            background-image: linear-gradient(white, lightgray);
+            border: 1px solid gray;
+        }
+
+        .bodybtns:hover {
+            border: 1px solid #0072BC;
+        }
+
+        .imgborderhover {
+            border: 5px solid white;
+        }
+
+        .imgborderhover:hover {
+            border: 5px solid lightgray;
+        }
+        
+ 
